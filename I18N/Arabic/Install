@@ -1,0 +1,18 @@
+
+Requirements
+------------
+
+The following requirements should be met prior to using Arabic library:
+* PHP version 5.0 or higher
+
+
+Installation instructions
+-------------------------
+
+Installation is quite easy: copy the contents of the "Arabic" folder and "Arabic.php"
+file to any location in your application required.
+
+Afterwards, make sure you can include "Arabic.php" file. This can be achieved by
+respecting a base folder structure, or by setting the PHP include path, for example:
+
+set_include_path(get_include_path() . PATH_SEPARATOR . '/path/to/Arabic.php/');
