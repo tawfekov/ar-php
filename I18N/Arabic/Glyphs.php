@@ -389,9 +389,9 @@ class I18N_Arabic_Glyphs
         
         $english  = array();
         $en_index = -1;
-		
-		$en_words = array();
-		$en_stack = array();
+        
+        $en_words = array();
+        $en_stack = array();
 
         for ($i = 0; $i < $w_count; $i++) {
             $pattern  = '/^(\n?)';
@@ -410,7 +410,7 @@ class I18N_Arabic_Glyphs
                 if ($en_index == -1) {
                     $en_index = $i;
                 }
-				$en_words[] = true;
+                $en_words[] = true;
             } elseif ($en_index != -1) {
                 $en_count = count($english);
                 
@@ -420,46 +420,47 @@ class I18N_Arabic_Glyphs
                 
                 $en_index = -1;
                 $english  = array();
-				
-				$en_words[] = false;
+                
+                $en_words[] = false;
             } else {
-				$en_words[] = false;
-			}
+                $en_words[] = false;
+            }
         }
 
-		if ($en_index != -1) {
-			$en_count = count($english);
-			
-			for ($j = 0; $j < $en_count; $j++) {
-				$words[$en_index + $j] = $english[$en_count - 1 - $j];
-			}
-		}
+        if ($en_index != -1) {
+            $en_count = count($english);
+            
+            for ($j = 0; $j < $en_count; $j++) {
+                $words[$en_index + $j] = $english[$en_count - 1 - $j];
+            }
+        }
 
-		if ($en_start) {
-			$last = true;
-			$from = 0;
-			
-			foreach ($en_words as $key => $value) {
-				if ($last !== $value) {
-					$to = $key - 1;
-					array_push($en_stack, array($from, $to));
-					$from = $key;
-				}
-				$last = $value;
-			}
-			
-			array_push($en_stack, array($from, $key));
-			
-			$new_words = array();
-			
-			while (list($from, $to) = array_pop($en_stack)) {
-				for ($i = $from; $i <= $to; $i++) {
-					$new_words[] = $words[$i];
-				}
-			}
-			
-			$words = $new_words;
-		}
+        // need more work to fix lines starts by English words
+        if ($en_start) {
+            $last = true;
+            $from = 0;
+            
+            foreach ($en_words as $key => $value) {
+                if ($last !== $value) {
+                    $to = $key - 1;
+                    array_push($en_stack, array($from, $to));
+                    $from = $key;
+                }
+                $last = $value;
+            }
+            
+            array_push($en_stack, array($from, $key));
+            
+            $new_words = array();
+            
+            while (list($from, $to) = array_pop($en_stack)) {
+                for ($i = $from; $i <= $to; $i++) {
+                    $new_words[] = $words[$i];
+                }
+            }
+            
+            $words = $new_words;
+        }
 
         for ($i = 0; $i < $w_count; $i++) {
             $w_len = mb_strlen($words[$i]) + 1;

@@ -16,7 +16,7 @@ header('Content-type: application/pdf');
 /*
  * Needed by fpdf library not by ArPHP library
  */
-//error_reporting(E_ALL ^ E_NOTICE);
+error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
 
 date_default_timezone_set('UTC');
 
@@ -35,15 +35,14 @@ $pdf->AddPage();
 require '../../Arabic.php';
 $Arabic = new I18N_Arabic('Glyphs');
 
-$text = 'The title is "عصر الأجاكس!" in Arabic';
-$text .= "\n".'العنوان هو "AJAX era!" باللغة الإنجليزية';
+$text = "\n".'العنوان هو "AJAX era!" باللغة الإنجليزية';
 $text .= "\n\n".'في حقيقة الأمر، لقد سبق لشركة Microsoft ذاتها التعامل مع تقنية Ajax هذه منذ أواخر تسعينات القرن الماضي, لا بل أنها لا تزال تستخدم تلك التقنية في تعزيز مقدرة برنامجها الشهير Outlook للبريد الإلكتروني. وعلى الرغم من كون تقنية Ajax تقنية قديمة العهد نسبيا، إلا أنها لم تلق (حين ظهورها أول مرة) الكثير من الاهتمام، إلا أن الفضل يعود إلى شركة Google في نفض الغبار عنها ولإعادة إكتشافها من جديد، وذلك من خلال طائفة من تطبيقاتها الجديدة والتي يقع على رأسها كل من غوغل Maps إضافة إلى مخدم البريد الإلكتروني Gmail واللذين شكلا فعلا علامة فارقة في عالم الويب وإشارة واضحة إلى ما ستؤول إليه تطبيقات الويب في المستقبل القريب. فهل أعجبتك الفكرة؟ سوريا، حلب في 13 أيار 2007 مـ';
 $text .= "\n\nتصحيح طريقة عرض الأرقام المتصلة بأحرف إنجليزية كـ 3M و W3C على سبيل المثال";
 $text .= "\n\nخالد الشمعة khaled@ar-php.org والموقع هو http://www.ar-php.org";
 
 // Known bugs:
+//$text = 'The title is "عصر الأجاكس!" in Arabic';
 //$text = ' مؤسسة (World Wide Web Consortium) W3C';
-//$text = 'The title says "W3C, بالعربي" OK?';
 //$text = ' ماذا لو كانت الجملة تنتهي بكلمة إنجليزية مثل Test?';
 
 $font_size = 16;
