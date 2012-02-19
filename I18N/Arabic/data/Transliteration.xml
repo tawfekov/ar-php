@@ -733,7 +733,7 @@ is en2ar) or from Arabic to English (when function property is ar2en).
     </pair>
     <pair>
       <search>ح</search>
-      <replace>UTF8 cedilla+h</replace>
+      <replace>ḩ</replace>
     </pair>
   </str_replace>
 
@@ -745,7 +745,7 @@ is en2ar) or from Arabic to English (when function property is ar2en).
     </pair>
     <pair>
       <search>ș</search>
-      <replace>UTF8 sub-macron+s</replace>
+      <replace>UTF8 sub macron+s</replace>
     </pair>
     <pair>
       <search>ț</search>
@@ -756,8 +756,8 @@ is en2ar) or from Arabic to English (when function property is ar2en).
       <replace>ḏh</replace>
     </pair>
     <pair>
-      <search>UTF8 cedilla+h</search>
-      <replace>UTF8 sub-macron+h</replace>
+      <search>ḩ</search>
+      <replace>ẖ</replace>
     </pair>
   </str_replace>
 
@@ -784,7 +784,7 @@ is en2ar) or from Arabic to English (when function property is ar2en).
       <replace>ḍ</replace>
     </pair>
     <pair>
-      <search>UTF8 cedilla+h</search>
+      <search>ḩ</search>
       <replace>ḥ</replace>
     </pair>
     <pair>
@@ -849,7 +849,7 @@ is en2ar) or from Arabic to English (when function property is ar2en).
     </pair>
     <pair>
       <search>خ</search>
-      <replace>UTF8 sub-macron+h</replace>
+      <replace>ẖ</replace>
     </pair>
     <pair>
       <search>ش</search>
