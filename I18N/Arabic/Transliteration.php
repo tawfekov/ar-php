@@ -118,6 +118,18 @@ class I18N_Arabic_Transliteration
     private static $_ar2enPregReplace = array();
     private static $_ar2enStrSearch   = array();
     private static $_ar2enStrReplace  = array();
+	
+	private static $_diariticalSearch  = array();
+	private static $_diariticalReplace = array();
+
+	private static $_iso233Search  = array();
+	private static $_iso233Replace = array();
+
+	private static $_rjgcSearch  = array();
+	private static $_rjgcReplace = array();
+
+	private static $_sesSearch  = array();
+	private static $_sesReplace = array();
 
     /**
      * Loads initialize values
@@ -131,6 +143,26 @@ class I18N_Arabic_Transliteration
         foreach ($xml->xpath("//preg_replace[@function='ar2en']/pair") as $pair) {
             array_push(self::$_ar2enPregSearch, (string)$pair->search);
             array_push(self::$_ar2enPregReplace, (string)$pair->replace);
+        }
+
+        foreach ($xml->xpath("//str_replace[@function='diaritical']/pair") as $pair) {
+            array_push(self::$_diariticalSearch, (string)$pair->search);
+            array_push(self::$_diariticalReplace, (string)$pair->replace);
+        }
+
+        foreach ($xml->xpath("//str_replace[@function='ISO233']/pair") as $pair) {
+            array_push(self::$_iso233Search, (string)$pair->search);
+            array_push(self::$_iso233Replace, (string)$pair->replace);
+        }
+
+        foreach ($xml->xpath("//str_replace[@function='RJGC']/pair") as $pair) {
+            array_push(self::$_rjgcSearch, (string)$pair->search);
+            array_push(self::$_rjgcReplace, (string)$pair->replace);
+        }
+
+        foreach ($xml->xpath("//str_replace[@function='SES']/pair") as $pair) {
+            array_push(self::$_sesSearch, (string)$pair->search);
+            array_push(self::$_sesReplace, (string)$pair->replace);
         }
 
         foreach ($xml->xpath("//str_replace[@function='ar2en']/pair") as $pair) {
@@ -188,10 +220,14 @@ class I18N_Arabic_Transliteration
      */
     public static function ar2en($string)
     {
-        $string = str_replace('/ة ال/', 'tul', $string);
+        //$string = str_replace('ة ال', 'tul', $string);
 
         $words  = explode(' ', $string);
         $string = '';
+		
+		for ($i=0; $i<count($words)-1; $i++) {
+			$words[$i] = str_replace('ة', 'ت', $words[$i]);
+		}
 
         foreach ($words as $word) {
             $temp = preg_replace(self::$_ar2enPregSearch, 
