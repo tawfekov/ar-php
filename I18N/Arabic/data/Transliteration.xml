@@ -386,7 +386,60 @@ is en2ar) or from Arabic to English (when function property is ar2en).
     </pair>
   </preg_replace>
 
+  <!-- UNGEGN (1972) -->
   <str_replace function="ar2en">
+    <pair>
+      <search>Al-ت</search>
+      <replace>At-t</replace>
+    </pair>
+    <pair>
+      <search>Al-ث</search>
+      <replace>Ath-th</replace>
+    </pair>
+    <pair>
+      <search>Al-د</search>
+      <replace>Ad-d</replace>
+    </pair>
+    <pair>
+      <search>Al-ذ</search>
+      <replace>Adh-dh</replace>
+    </pair>
+    <pair>
+      <search>Al-ر</search>
+      <replace>Ar-r</replace>
+    </pair>
+    <pair>
+      <search>Al-ز</search>
+      <replace>Az-z</replace>
+    </pair>
+    <pair>
+      <search>Al-س</search>
+      <replace>As-s</replace>
+    </pair>
+    <pair>
+      <search>Al-ش</search>
+      <replace>Ash-sh</replace>
+    </pair>
+    <pair>
+      <search>Al-ص</search>
+      <replace>As-a</replace>
+    </pair>
+    <pair>
+      <search>Al-ض</search>
+      <replace>Ad-d</replace>
+    </pair>
+    <pair>
+      <search>Al-ط</search>
+      <replace>At-t</replace>
+    </pair>
+    <pair>
+      <search>Al-ظ</search>
+      <replace>Az-z</replace>
+    </pair>
+    <pair>
+      <search>Al-ن</search>
+      <replace>An-n</replace>
+    </pair>
     <pair>
       <search>ّ</search>
       <replace>#</replace>
@@ -478,6 +531,10 @@ is en2ar) or from Arabic to English (when function property is ar2en).
     <pair>
       <search>ُ</search>
       <replace>u</replace>
+    </pair>
+    <pair>
+      <search>ْ</search>
+      <replace></replace>
     </pair>
     <pair>
       <search>ا</search>
@@ -636,4 +693,200 @@ is en2ar) or from Arabic to English (when function property is ar2en).
       <replace>?</replace>
     </pair>
   </str_replace>
+
+  <str_replace function="diaritical">
+    <pair>
+      <search>َا</search>
+      <replace>ā</replace>
+    </pair>
+    <pair>
+      <search>ِي</search>
+      <replace>ī</replace>
+    </pair>
+    <pair>
+      <search>ُو</search>
+      <replace>ū</replace>
+    </pair>
+    <pair>
+      <search>َى</search>
+      <replace>á</replace>
+    </pair>
+    <pair>
+      <search>ص</search>
+      <replace>ș</replace>
+    </pair>
+    <pair>
+      <search>ض</search>
+      <replace>ḑ</replace>
+    </pair>
+    <pair>
+      <search>ط</search>
+      <replace>ț</replace>
+    </pair>
+    <pair>
+      <search>آ</search>
+      <replace>ā</replace>
+    </pair>
+    <pair>
+      <search>ظ</search>
+      <replace>UTF8 cedilla+z</replace>
+    </pair>
+    <pair>
+      <search>ح</search>
+      <replace>UTF8 cedilla+h</replace>
+    </pair>
+  </str_replace>
+
+  <!-- Royal Jordanian Geographic Center -->
+  <str_replace function="RJGC">
+    <pair>
+      <search>ḑ</search>
+      <replace>ḏ</replace>
+    </pair>
+    <pair>
+      <search>ș</search>
+      <replace>UTF8 sub-macron+s</replace>
+    </pair>
+    <pair>
+      <search>ț</search>
+      <replace>ṯ</replace>
+    </pair>
+    <pair>
+      <search>UTF8 cedilla+z</search>
+      <replace>ḏh</replace>
+    </pair>
+    <pair>
+      <search>UTF8 cedilla+h</search>
+      <replace>UTF8 sub-macron+h</replace>
+    </pair>
+  </str_replace>
+
+  <!-- The Survey of Egypt System -->
+  <str_replace function="SES">
+    <pair>
+      <search>á</search>
+      <replace>a</replace>
+    </pair>
+    <pair>
+      <search>ā</search>
+      <replace>â</replace>
+    </pair>
+    <pair>
+      <search>aw</search>
+      <replace>ô</replace>
+    </pair>
+    <pair>
+      <search>ay</search>
+      <replace>ei</replace>
+    </pair>
+    <pair>
+      <search>ḑ</search>
+      <replace>ḍ</replace>
+    </pair>
+    <pair>
+      <search>UTF8 cedilla+h</search>
+      <replace>ḥ</replace>
+    </pair>
+    <pair>
+      <search>ī</search>
+      <replace>î</replace>
+    </pair>
+    <pair>
+      <search>j</search>
+      <replace>g</replace>
+    </pair>
+    <pair>
+      <search>ș</search>
+      <replace>ṣ</replace>
+    </pair>
+    <pair>
+      <search>ț</search>
+      <replace>ṭ</replace>
+    </pair>
+    <pair>
+      <search>ū</search>
+      <replace>û</replace>
+    </pair>
+    <pair>
+      <search>UTF8 cedilla+z</search>
+      <replace>ẓ</replace>
+    </pair>
+  </str_replace>
+
+  <!-- The transliteration ISO 233:1984 -->
+  <str_replace function="ISO233">
+    <pair>
+      <search>َا</search>
+      <replace>a'</replace>
+    </pair>
+    <pair>
+      <search>ِي</search>
+      <replace>iy</replace>
+    </pair>
+    <pair>
+      <search>ُو</search>
+      <replace>uw</replace>
+    </pair>
+    <pair>
+      <search>ً</search>
+      <replace>á</replace>
+    </pair>
+    <pair>
+      <search>ٌ</search>
+      <replace>ú</replace>
+    </pair>
+    <pair>
+      <search>ٍ</search>
+      <replace>í</replace>
+    </pair>
+    <pair>
+      <search>ذ</search>
+      <replace>ḏ</replace>
+    </pair>
+    <pair>
+      <search>غ</search>
+      <replace>ġ</replace>
+    </pair>
+    <pair>
+      <search>خ</search>
+      <replace>UTF8 sub-macron+h</replace>
+    </pair>
+    <pair>
+      <search>ش</search>
+      <replace>š</replace>
+    </pair>
+    <pair>
+      <search>ث</search>
+      <replace>ṯ</replace>
+    </pair>
+    <pair>
+      <search>ض</search>
+      <replace>ḍ</replace>
+    </pair>
+    <pair>
+      <search>ة</search>
+      <replace>ṫ</replace>
+    </pair>
+    <pair>
+      <search>ح</search>
+      <replace>ḥ</replace>
+    </pair>
+    <pair>
+      <search>ج</search>
+      <replace>ǧ</replace>
+    </pair>
+    <pair>
+      <search>ص</search>
+      <replace>ṣ</replace>
+    </pair>
+    <pair>
+      <search>ط</search>
+      <replace>ṭ</replace>
+    </pair>
+    <pair>
+      <search>ظ</search>
+      <replace>ẓ</replace>
+    </pair>
+  </str_replace>
+  
 </data> 
