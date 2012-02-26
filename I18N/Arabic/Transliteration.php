@@ -118,18 +118,18 @@ class I18N_Arabic_Transliteration
     private static $_ar2enPregReplace = array();
     private static $_ar2enStrSearch   = array();
     private static $_ar2enStrReplace  = array();
-	
-	private static $_diariticalSearch  = array();
-	private static $_diariticalReplace = array();
+        
+    private static $_diariticalSearch  = array();
+    private static $_diariticalReplace = array();
 
-	private static $_iso233Search  = array();
-	private static $_iso233Replace = array();
+    private static $_iso233Search  = array();
+    private static $_iso233Replace = array();
 
-	private static $_rjgcSearch  = array();
-	private static $_rjgcReplace = array();
+    private static $_rjgcSearch  = array();
+    private static $_rjgcReplace = array();
 
-	private static $_sesSearch  = array();
-	private static $_sesReplace = array();
+    private static $_sesSearch  = array();
+    private static $_sesReplace = array();
 
     /**
      * Loads initialize values
@@ -224,10 +224,10 @@ class I18N_Arabic_Transliteration
 
         $words  = explode(' ', $string);
         $string = '';
-		
-		for ($i=0; $i<count($words)-1; $i++) {
-			$words[$i] = str_replace('ة', 'ت', $words[$i]);
-		}
+                
+        for ($i=0; $i<count($words)-1; $i++) {
+            $words[$i] = str_replace('ة', 'ت', $words[$i]);
+        }
 
         foreach ($words as $word) {
             $temp = preg_replace(self::$_ar2enPregSearch, 
