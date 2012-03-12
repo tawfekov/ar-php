@@ -4,13 +4,17 @@ What's new in ArPHP 3.1.0 beta (release date: #######)
 * More accurate gender detection by add some formats like إفتعال and إفعال as 
   well as check the list of most common irregular Arabic female names.
 
-* Transliteration from Arabic to English supports now: UNGEGN, RJGC, SES, and
-  ISO 233 standards.
+* Transliteration from Arabic to English supports now: UNGEGN, UNGEGN+ (i.e. with
+  diaritical marks), RJGC, SES, and ISO 233 standards.
+
+* Enhance Numbers sub class to spell ordering numbers in Arabic idiom also.
   
 * Fix the transliteration issue of ال precedes a word beginning with one of the
   "sun letters", and issue of ة when it used in combined words to romanized as 
   t instead of h.
-  
+
+* Move out "js" sub directory and keyboard example to keep it pure PHP code.
+
 
 What's new in ArPHP 3.0.0 beta (release date: Feb 5, 2012)
 -----------------------------------------------------

@@ -106,7 +106,7 @@
  */ 
 class I18N_Arabic_Transliteration
 {
-    private static $_arFinePatterns     = array("/'+/", "/([\- ])'/", '/(.)#/');
+    private static $_arFinePatterns     = array("/'+/u", "/([\- ])'/u", '/(.)#/u');
     private static $_arFineReplacements = array("'", '\\1', "\\1'\\1");
     
     private static $_en2arPregSearch  = array();
@@ -213,12 +213,14 @@ class I18N_Arabic_Transliteration
      * Transliterate Arabic string into English by render them in the 
      * orthography of the English language
      *           
-     * @param string $string Arabic string you want to transliterate
+     * @param string $string   Arabic string you want to transliterate
+     * @param string $standard Transliteration standard, default is UNGEGN 
+     *                         and possible values are [UNGEGN, UNGEGN+, RJGC, SES, ISO233]
      *                    
      * @return String Out of vocabulary Arabic string in English characters
      * @author Khaled Al-Sham'aa <khaled@ar-php.org>
      */
-    public static function ar2en($string)
+    public static function ar2en($string, $standard='UNGEGN')
     {
         //$string = str_replace('ة ال', 'tul', $string);
 
@@ -230,8 +232,30 @@ class I18N_Arabic_Transliteration
         }
 
         foreach ($words as $word) {
+            $temp = $word;
+
+            if ($standard == 'UNGEGN+') {
+                $temp = str_replace(self::$_diariticalSearch, 
+                                     self::$_diariticalReplace, $temp);
+            } else if ($standard == 'RJGC') {
+                $temp = str_replace(self::$_diariticalSearch, 
+                                     self::$_diariticalReplace, $temp);
+
+                $temp = str_replace(self::$_rjgcSearch, 
+                                     self::$_rjgcReplace, $temp);
+            } else if ($standard == 'SES') {
+                $temp = str_replace(self::$_diariticalSearch, 
+                                     self::$_diariticalReplace, $temp);
+
+                $temp = str_replace(self::$_sesSearch, 
+                                     self::$_sesReplace, $temp);
+            } else if ($standard == 'ISO233') {
+                $temp = str_replace(self::$_iso233Search, 
+                                     self::$_iso233Replace, $temp);
+            }
+            
             $temp = preg_replace(self::$_ar2enPregSearch, 
-                                 self::$_ar2enPregReplace, $word);
+                                 self::$_ar2enPregReplace, $temp);
 
             $temp = str_replace(self::$_ar2enStrSearch, 
                                 self::$_ar2enStrReplace, $temp);
@@ -239,13 +263,20 @@ class I18N_Arabic_Transliteration
             $temp = preg_replace(self::$_arFinePatterns, 
                                  self::$_arFineReplacements, $temp);
             
-            $temp = ucwords($temp);
+            if (preg_match('/[a-z]/', mb_substr($temp, 0, 1))) {
+                $temp = ucwords($temp);
+            }
+            
             $pos  = strpos($temp, '-');
 
             if ($pos > 0) {
-                $temp2  = substr($temp, 0, $pos);
-                $temp2 .= '-'.strtoupper($temp[$pos+1]);
-                $temp2 .= substr($temp, $pos+2);
+                if (preg_match('/[a-z]/', mb_substr($temp, $pos+1, 1))) {
+                    $temp2  = substr($temp, 0, $pos);
+                    $temp2 .= '-'.strtoupper($temp[$pos+1]);
+                    $temp2 .= substr($temp, $pos+2);
+                } else {
+                    $temp2 = $temp;
+                }
             } else {
                 $temp2 = $temp;
             }

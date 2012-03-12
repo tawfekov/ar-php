@@ -422,7 +422,7 @@ is en2ar) or from Arabic to English (when function property is ar2en).
     </pair>
     <pair>
       <search>Al-ص</search>
-      <replace>As-a</replace>
+      <replace>As-s</replace>
     </pair>
     <pair>
       <search>Al-ض</search>
@@ -696,12 +696,24 @@ is en2ar) or from Arabic to English (when function property is ar2en).
 
   <str_replace function="diaritical">
     <pair>
-      <search>َا</search>
-      <replace>ā</replace>
+      <search>Al-ص</search>
+      <replace>Aș-ș</replace>
     </pair>
     <pair>
-      <search>ِي</search>
-      <replace>ī</replace>
+      <search>Al-ض</search>
+      <replace>Aḑ-ḑ</replace>
+    </pair>
+    <pair>
+      <search>Al-ط</search>
+      <replace>Aț-ț</replace>
+    </pair>
+    <pair>
+      <search>Al-ظ</search>
+      <replace>Az̧-z̧</replace><!-- UTF8 z-cedilla -->
+    </pair>
+    <pair>
+      <search>َا</search>
+      <replace>ā</replace>
     </pair>
     <pair>
       <search>ُو</search>
@@ -734,6 +746,10 @@ is en2ar) or from Arabic to English (when function property is ar2en).
     <pair>
       <search>ح</search>
       <replace>ḩ</replace>
+    </pair>
+    <pair>
+      <search>ِي</search>
+      <replace>ī</replace>
     </pair>
   </str_replace>
 
