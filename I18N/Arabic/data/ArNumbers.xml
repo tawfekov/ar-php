@@ -24,6 +24,7 @@
     <number value="8" gender="male">ثماني</number>
     <number value="9" gender="male">تسع</number>
     <number value="10" gender="male">عشر</number>
+
     <number value="3" gender="female">ثلاثة</number>
     <number value="4" gender="female">أربعة</number>
     <number value="5" gender="female">خمسة</number>
@@ -127,4 +128,28 @@
     <number value="8">&#1640;</number>
     <number value="9">&#1641;</number>
   </arabicIndic>
+  
+  <order>
+    <number value="1" gender="male">حادي</number>
+    <number value="2" gender="male">ثاني</number>
+    <number value="3" gender="male">ثالث</number>
+    <number value="4" gender="male">رابع</number>
+    <number value="5" gender="male">خامس</number>
+    <number value="6" gender="male">سادس</number>
+    <number value="7" gender="male">سابع</number>
+    <number value="8" gender="male">ثامن</number>
+    <number value="9" gender="male">تاسع</number>
+    <number value="10" gender="male">عاشر</number>
+
+    <number value="1" gender="female">حادية</number>
+    <number value="2" gender="female">ثانية</number>
+    <number value="3" gender="female">ثالثة</number>
+    <number value="4" gender="female">رابعة</number>
+    <number value="5" gender="female">خامسة</number>
+    <number value="6" gender="female">سادسة</number>
+    <number value="7" gender="female">سابعة</number>
+    <number value="8" gender="female">ثامنة</number>
+    <number value="9" gender="female">تاسعة</number>
+    <number value="10" gender="female">عاشرة</number>
+  </order>
 </data>

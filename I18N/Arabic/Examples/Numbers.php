@@ -164,6 +164,45 @@ END;
 
 highlight_string($code);
 
+?>
+</div><br />
+
+<div class="Paragraph" dir="rtl">
+<h2 dir="ltr">Example Output 5: ترتيب لمعدود مؤنث منصوب أو مجرور</h2>
+<?php
+    $Arabic->setFeminine(2);
+    $Arabic->setFormat(2);
+    $Arabic->setOrder(2);
+    
+    $integer = '17';
+    
+    $text = $Arabic->int2str($integer);
+    
+    echo "<p dir=ltr align=center>$integer<br />$text</p>";
+?>
+
+</div><br />
+<div class="Paragraph">
+<h2>Example Code 5:</h2>
+<?php
+$code = <<< END
+<?php
+    require '../../Arabic.php';
+    \$Arabic = new I18N_Arabic('Numbers');
+    
+    \$Arabic->setFeminine(2);
+    \$Arabic->setFormat(2);
+    \$Arabic->setOrder(2);
+    
+    \$integer = '17';
+    
+    \$text = \$Arabic->int2str(\$integer);
+    
+    echo "<p dir=ltr align=center>\$integer<br />\$text</p>";
+END;
+
+highlight_string($code);
+
 $time_end = microtime(true);
 $time = $time_end - $time_start;
 

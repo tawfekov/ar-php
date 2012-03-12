@@ -128,8 +128,10 @@ class I18N_Arabic_Numbers
     private $_individual    = array();
     private $_complications = array();
     private $_arabicIndic   = array();
+    private $_ordering      = array();
     private $_feminine      = 1;
     private $_format        = 1;
+    private $_order         = 1;
 
     /**
      * Loads initialize values
@@ -182,6 +184,14 @@ class I18N_Arabic_Numbers
             
             $this->_arabicIndic["$value"] = $html;
         } 
+
+        foreach ($xml->xpath("//order/number[@gender='male']") as $num) {
+            $this->_ordering["{$num['value']}"][1] = (string)$num;
+        } 
+
+        foreach ($xml->xpath("//order/number[@gender='female']") as $num) {
+            $this->_ordering["{$num['value']}"][2] = (string)$num;
+        } 
     }
     
     /**
@@ -221,6 +231,24 @@ class I18N_Arabic_Numbers
     }
     
     /**
+     * Set the ordering flag, is it normal number or ordering number
+     *      
+     * @param integer $value Is it an ordering number? default is 1
+     *                       (use 1 if no and 2 if yes)
+     *                            
+     * @return object $this to build a fluent interface
+     * @author Khaled Al-Sham'aa <khaled@ar-php.org>
+     */
+    public function setOrder($value)
+    {
+        if ($value == 1 || $value == 2) {
+            $this->_order = $value;
+        }
+        
+        return $this;
+    }
+    
+    /**
      * Get the feminine flag of counted object
      *      
      * @return integer return current setting of counted object feminine flag
@@ -244,6 +272,17 @@ class I18N_Arabic_Numbers
     }
     
     /**
+     * Get the ordering flag value
+     *      
+     * @return integer return current setting of ordering flag value
+     * @author Khaled Al-Sham'aa <khaled@ar-php.org>
+     */
+    public function getOrder()
+    {
+        return $this->_format;
+    }
+    
+    /**
      * Spell integer number in Arabic idiom
      *      
      * @param integer $number The number you want to spell in Arabic idiom
@@ -253,20 +292,28 @@ class I18N_Arabic_Numbers
      */
     public function int2str($number)
     {
-        if ($number < 0) {
-            $string = 'سالب ';
-            $number = (string) -1 * $number;
+        if ($number == 1 && $this->_order == 2) {
+            if ($this->_feminine == 1) {
+                $string = 'الأول';
+            } else {
+                $string = 'الأولى';
+            }
         } else {
-            $string = '';
-        }
-        
-        $temp = explode('.', $number);
+            if ($number < 0) {
+                $string = 'سالب ';
+                $number = (string) -1 * $number;
+            } else {
+                $string = '';
+            }
+            
+            $temp = explode('.', $number);
 
-        $string .= $this->subInt2str($temp[0]);
+            $string .= $this->subInt2str($temp[0]);
 
-        if (!empty($temp[1])) {
-            $dec     = $this->subInt2str($temp[1]);
-            $string .= ' فاصلة ' . $dec; 
+            if (!empty($temp[1])) {
+                $dec     = $this->subInt2str($temp[1]);
+                $string .= ' فاصلة ' . $dec; 
+            }
         }
         
         return $string;
@@ -318,12 +365,24 @@ class I18N_Arabic_Numbers
                 if ($text) {
                     if ($number == 1 && $i != 0) {
                         $text = $this->_complications[$i][4];
+                        if ($this->_order == 2) {
+                            $text = 'ال' . $text;
+                        }
                     } elseif ($number == 2 && $i != 0) {
                         $text = $this->_complications[$i][$this->_format];
+                        if ($this->_order == 2) {
+                            $text = 'ال' . $text;
+                        }
                     } elseif ($number > 2 && $number < 11 && $i != 0) {
                         $text .= ' ' . $this->_complications[$i][3];
+                        if ($this->_order == 2) {
+                            $text = 'ال' . $text;
+                        }
                     } elseif ($i != 0) {
                         $text .= ' ' . $this->_complications[$i][4];
+                        if ($this->_order == 2) {
+                            $text = 'ال' . $text;
+                        }
                     }
                     
                     //--- by Jnom: handle left zero
@@ -362,38 +421,66 @@ class I18N_Arabic_Numbers
             $hundred = floor($number / 100) * 100;
             $number  = $number % 100;
             
-            if ($hundred == 200) {
-                array_push($items, $this->_individual[$hundred][$this->_format]);
+            if ($this->_order == 2) {
+                $pre = 'ال';
             } else {
-                array_push($items, $this->_individual[$hundred]);
+                $pre = '';
+            }
+            
+            if ($hundred == 200) {
+                array_push($items, $pre.$this->_individual[$hundred][$this->_format]);
+            } else {
+                array_push($items, $pre.$this->_individual[$hundred]);
             }
         }
         
         if ($number != 0) {
-            if ($number == 2 || $number == 12) {
-                array_push($items, $this->_individual[$number]
-                                                    [$this->_feminine]
-                                                    [$this->_format]);
-            } elseif ($number < 20) {
-                array_push($items, $this->_individual[$number][$this->_feminine]);
+            if ($this->_order == 2) {
+                if ($number <= 10) {
+                    array_push($items, $this->_ordering[$number][$this->_feminine]);
+                } elseif ($number < 20) {
+                    $number -= 10;
+                    $item    = 'ال' . $this->_ordering[$number][$this->_feminine];
+
+                    if ($this->_feminine == 1) {
+                        $item .= ' عشر';
+                    } else {
+                        $item .= ' عشرة';
+                    }
+
+                    array_push($items, $item);
+                } else {
+                    $ones = $number % 10;
+                    $tens = floor($number / 10) * 10;
+
+                    array_push($items, 'ال' . $this->_ordering[$ones][$this->_feminine]);
+                    array_push($items, 'ال' . $this->_individual[$tens][$this->_format]);
+                }
             } else {
-                $ones = $number % 10;
-                $tens = floor($number / 10) * 10;
-                
-                if ($ones == 2) {
-                    array_push($items, $this->_individual[$ones]
+                if ($number == 2 || $number == 12) {
+                    array_push($items, $this->_individual[$number]
                                                         [$this->_feminine]
                                                         [$this->_format]);
-                } elseif ($ones > 0) {
-                    array_push($items, $this->_individual[$ones][$this->_feminine]);
+                } elseif ($number < 20) {
+                    array_push($items, $this->_individual[$number][$this->_feminine]);
+                } else {
+                    $ones = $number % 10;
+                    $tens = floor($number / 10) * 10;
+                    
+                    if ($ones == 2) {
+                        array_push($items, $this->_individual[$ones]
+                                                            [$this->_feminine]
+                                                            [$this->_format]);
+                    } elseif ($ones > 0) {
+                        array_push($items, $this->_individual[$ones][$this->_feminine]);
+                    }
+                    
+                    array_push($items, $this->_individual[$tens][$this->_format]);
                 }
-                
-                array_push($items, $this->_individual[$tens][$this->_format]);
             }
         }
         
-        $items = array_diff($items, array(''));
-        
+        $items  = array_diff($items, array(''));
         $string = implode(' و ', $items);
         
         return $string;
