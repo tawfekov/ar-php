@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -79,7 +79,7 @@ just as well with respect and communication.  The Internet Internationalization
   <p></p>
 </dl>
 END;
-
+$text = mb_strtoupper($text, 'UTF-8');
 require '../../Arabic.php';
 $Arabic = new I18N_Arabic('Identifier');
 

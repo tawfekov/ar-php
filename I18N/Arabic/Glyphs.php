@@ -268,6 +268,7 @@ class I18N_Arabic_Glyphs
             
             $form = 0;
             
+            //if ($prevChar == 'لا' && (mb_strpos('آأإا', $crntChar) !== false)) {
             if ($prevChar == 'ل' && (mb_strpos('آأإا', $crntChar) !== false)) {
                 if (mb_strpos($this->_prevLink, $chars[$i - 2]) !== false) {
                     $form++;

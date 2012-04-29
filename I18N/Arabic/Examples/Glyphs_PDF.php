@@ -44,6 +44,7 @@ $text .= "\n\nخالد الشمعة khaled@ar-php.org والموقع هو http:/
 //$text = 'The title is "عصر الأجاكس!" in Arabic';
 //$text = ' مؤسسة (World Wide Web Consortium) W3C';
 //$text = ' ماذا لو كانت الجملة تنتهي بكلمة إنجليزية مثل Test?';
+//$text = 'لَاريب';
 
 $font_size = 16;
 $chars_in_line = $Arabic->a4MaxChars($font_size);

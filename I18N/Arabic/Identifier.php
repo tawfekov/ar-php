@@ -187,7 +187,7 @@ class I18N_Arabic_Identifier
         
         return $arRef;
     }
-
+    
     /**
      * Find out if given string is Arabic text or not
      *          
