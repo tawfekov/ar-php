@@ -1,4 +1,4 @@
-What's new in ArPHP 3.1.0 beta (release date: #######)
+What's new in ArPHP 3.1.0 (release date: #######)
 -----------------------------------------------------
 
 * More accurate gender detection by add some formats like إفتعال and إفعال as 
@@ -8,6 +8,9 @@ What's new in ArPHP 3.1.0 beta (release date: #######)
   diaritical marks), RJGC, SES, and ISO 233 standards.
 
 * Enhance Numbers sub class to spell ordering numbers in Arabic idiom also.
+  
+* Add two extra methods into CharsetC sub class to convert Arabic text from UTF-8 
+  and ISO-8859-6 charset into HTML entities named as "iso2html" and "utf2html".
   
 * Fix the transliteration issue of ال precedes a word beginning with one of the
   "sun letters", and issue of ة when it used in combined words to romanized as 

@@ -339,6 +339,66 @@ class I18N_Arabic_CharsetC
         }
         return $converted;
     }
+
+    /**
+     * Convert Arabic string from ISO-8859-6 to HTML entities format
+     *      
+     * @param string $string Original Arabic string in ISO-8859-6 format
+     *      
+     * @return string Converted Arabic string in HTML entities format
+     * @author Khaled Al-Sham'aa <khaled@ar-php.org>
+     */
+    public function iso2html($string)
+    {
+        $chars     = preg_split('//', $string);
+        $converted = null;
+        
+        foreach ($chars as $char) {
+            $key = $this->findISO($char);
+
+            if (is_int($key) && $key < 58) {
+                $converted .= '&#' . $this->getHTML($key) . ';';
+            } else {
+                $converted .= $char;
+            }
+        }
+        return $converted;
+    }
+
+    /**
+     * Convert Arabic string from UTF-8 to HTML entities format
+     *      
+     * @param string $string Original Arabic string in UTF-8 format
+     *      
+     * @return string Converted Arabic string in HTML entities format
+     * @author Khaled Al-Sham'aa <khaled@ar-php.org>
+     */
+    public function utf2html($string)
+    {
+        $chars     = preg_split('//', $string);
+        $converted = null;
+        
+        $cmp = false;
+        foreach ($chars as $char) {
+            $ascii = ord($char);
+            if (($ascii == 216 || $ascii == 217) && !$cmp) {
+                $code = $char;
+                $cmp  = true;
+                continue;
+            }
+            if ($cmp) {
+                $code .= $char;
+                $cmp   = false;
+                $key   = $this->findUTF($code);
+                if (is_int($key) && $key < 58) {
+                    $converted .= '&#' . $this->getHTML($key) . ';';
+                }
+            } else {
+                $converted .= $char;
+            }
+        }
+        return $converted;
+    }
     
     /**
      * Convert Arabic string from ISO-8859-6 to Windows-1256 format

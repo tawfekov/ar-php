@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Example of Arabic Charset Converter
  *
