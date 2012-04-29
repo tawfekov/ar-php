@@ -79,7 +79,7 @@ just as well with respect and communication.  The Internet Internationalization
   <p></p>
 </dl>
 END;
-$text = mb_strtoupper($text, 'UTF-8');
+
 require '../../Arabic.php';
 $Arabic = new I18N_Arabic('Identifier');
 
