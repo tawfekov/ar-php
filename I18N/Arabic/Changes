@@ -18,7 +18,10 @@ What's new in ArPHP 3.1.0 (release date: #######)
 
 * Move out "js" sub directory and keyboard example to keep it pure PHP code.
 
+* Convert time presented in the "Info.php" example to GMT based on the server time 
+  zone offset.
 
+  
 What's new in ArPHP 3.0.0 beta (release date: Feb 5, 2012)
 -----------------------------------------------------
 

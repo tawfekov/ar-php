@@ -33,6 +33,8 @@ $file = '../data/arab_countries.xml';
 // load XML file
 $xml = simplexml_load_file($file) or die ('Unable to load XML file!');
 
+//$xml = $xml->xpath("/countries/country[.//timezone = '+3' or .//elevation > 100]");
+
 if ($_GET['lang'] == 'arabic') {
     $lang = 'arabic';
     echo '<a href="Info.php?lang=english">English</a>';
@@ -77,8 +79,11 @@ foreach ($xml as $country) {
         }
     }
     
+    // convert current time to GMT based on time zone offset
+    $gmtime = time() - (int)substr(date('O'),0,3)*60*60; 
+    
     echo '<td>'.$timezone.' GMT</td>';
-    echo '<td>'.date('G:i', time()+$timezone*3600).'</td>';
+    echo '<td>'.date('G:i', $gmtime+$timezone*3600).'</td>';
     echo '<td><a href="http://www.xe.com/ucc/convert.cgi?Amount=1&From=USD&To='.$country->currency->iso.'" target="_blank">'.$country->currency->$lang.'</a></td>';
     echo '<td><a href="http://www.101domain.com/whois-'.strtolower($country->iso3166->a2).'.php" target="_blank">http://www.example.com.'.strtolower($country->iso3166->a2).'</a></td>';
     echo '<td>+'.$country->dialcode.'</td>';
@@ -145,8 +150,11 @@ $code = <<< END
             }
         }
         
+        // convert current time to GMT based on time zone offset
+        \$gmtime = time() - (int)substr(date('O'),0,3)*60*60; 
+
         echo '<td>'.\$timezone.' GMT</td>';
-        echo '<td>'.date('G:i', time()+\$timezone*3600).'</td>';
+        echo '<td>'.date('G:i', \$gmtime+\$timezone*3600).'</td>';
         echo '<td><a href="http://www.xe.com/ucc/convert.cgi?Amount=1&From=USD&To='.\$country->currency->iso.'" target="_blank">'
                   .\$country->currency->\$lang.'</a></td>';
         echo '<td><a href="http://www.101domain.com/whois-'.strtolower(\$country->iso3166->a2).'.php" target="_blank">
