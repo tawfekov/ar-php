@@ -55,6 +55,16 @@ echo "<b>Maghrib:</b> {$times[4]}<br />";
 echo "<b>Isha:</b> {$times[5]}<br />";
 echo "<b>Midnight:</b> {$times[7]}<br /><br />";
 
+echo '<b>Imsak:</b> '   .date('l j F Y g:i a', $times[9][8]).'<br />';
+echo '<b>Fajr:</b> '    .date('l j F Y g:i a', $times[9][0]).'<br />';
+echo '<b>Sunrise:</b> ' .date('l j F Y g:i a', $times[9][1]).'<br />';
+echo '<b>Dhuhr:</b> '   .date('l j F Y g:i a', $times[9][2]).'<br />';
+echo '<b>Asr:</b> '     .date('l j F Y g:i a', $times[9][3]).'<br />';
+echo '<b>Sunset:</b> '  .date('l j F Y g:i a', $times[9][6]).'<br />';
+echo '<b>Maghrib:</b> ' .date('l j F Y g:i a', $times[9][4]).'<br />';
+echo '<b>Isha:</b> '    .date('l j F Y g:i a', $times[9][5]).'<br />';
+echo '<b>Midnight:</b> '.date('l j F Y g:i a', $times[9][7]).'<br /><br />';
+
 $direction = $Arabic->getQibla();
 echo "<b>Qibla Direction (from the north direction):</b> $direction ";
 echo "(<a href=\"./Qibla.php?d=$direction\" target=_blank>click here</a>)<br /><br/>";
@@ -92,6 +102,16 @@ $code = <<< END
     echo "<b>Maghrib:</b> {\$times[4]}<br />";
     echo "<b>Isha:</b> {\$times[5]}<br />";
     echo "<b>Midnight:</b> {\$times[7]}<br /><br />";
+
+    echo '<b>Imsak:</b> '   .date('l j F Y g:i a', \$times[9][8]).'<br />';
+    echo '<b>Fajr:</b> '    .date('l j F Y g:i a', \$times[9][0]).'<br />';
+    echo '<b>Sunrise:</b> ' .date('l j F Y g:i a', \$times[9][1]).'<br />';
+    echo '<b>Dhuhr:</b> '   .date('l j F Y g:i a', \$times[9][2]).'<br />';
+    echo '<b>Asr:</b> '     .date('l j F Y g:i a', \$times[9][3]).'<br />';
+    echo '<b>Sunset:</b> '  .date('l j F Y g:i a', \$times[9][6]).'<br />';
+    echo '<b>Maghrib:</b> ' .date('l j F Y g:i a', \$times[9][4]).'<br />';
+    echo '<b>Isha:</b> '    .date('l j F Y g:i a', \$times[9][5]).'<br />';
+    echo '<b>Midnight:</b> '.date('l j F Y g:i a', \$times[9][7]).'<br /><br />';
     
     \$direction = \$Arabic->getQibla();
     echo "<b>Qibla Direction (from the north direction):</b> \$direction<br />";

@@ -545,22 +545,28 @@ class I18N_Arabic_Salat
      *               hh:mm where hh is the hour in local format and 24 mode
      *               mm is minutes with leading zero to be 2 digits always
      *               array items is [$Fajr, $Sunrise, $Dhuhr, $Asr, $Maghrib, 
-     *                               $Isha, $Sunset, $Midnight, $Imsak]
+     *               $Isha, $Sunset, $Midnight, $Imsak, array $timestamps]
      * @author Khaled Al-Sham'aa <khaled@ar-php.org>
      * @author Hamid Zarrabi-Zadeh <zarrabi@scs.carleton.ca>
      * @source http://praytimes.org/calculation
      */
     public function getPrayTime2()
     {
+        $unixtimestamp = mktime(0, 0, 0, $this->month, $this->day, $this->year);
+        
         // Calculate Julian date
         if ($this->month <= 2) {
-            $this->year  -= 1;
-            $this->month += 12;
+            $year  = $this->year - 1;
+            $month = $this->month + 12;
+        } else {
+            $year  = $this->year;
+            $month = $this->month;
         }
-        $A = floor($this->year / 100);
+        
+        $A = floor($year / 100);
         $B = 2 - $A + floor($A / 4);
 
-        $jd = floor(365.25 * ($this->year + 4716)) + floor(30.6001 * ($this->month + 1)) + $this->day + $B - 1524.5;
+        $jd = floor(365.25 * ($year + 4716)) + floor(30.6001 * ($month + 1)) + $this->day + $B - 1524.5;
         
         // The following algorithm from U.S. Naval Observatory computes the 
         // Sun's angular coordinates to an accuracy of about 1 arcminute within 
@@ -692,6 +698,12 @@ class I18N_Arabic_Salat
             }
             
             $times[$index] = "$hours:$minutes";
+            
+            $times[9][$index] = $unixtimestamp + 3600 * $hours + 60 * $minutes;
+            
+            if ($index == 7 && $hours < 6) {
+                $times[9][$index] += 24 * 3600;
+            }
         }
         
         return $times;

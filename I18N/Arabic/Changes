@@ -12,6 +12,9 @@ What's new in ArPHP 3.1.0 (release date: #######)
 * Add two extra methods into CharsetC sub class to convert Arabic text from UTF-8 
   and ISO-8859-6 charset into HTML entities named as "iso2html" and "utf2html".
   
+* Salat sub class deliver now extra output format by present times in Unix timestamp 
+  to provide users more flexibility in handle it.
+  
 * Fix the transliteration issue of ال precedes a word beginning with one of the
   "sun letters", and issue of ة when it used in combined words to romanized as 
   t instead of h.
