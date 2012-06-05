@@ -14,6 +14,8 @@ What's new in ArPHP 3.1.0 (release date: #######)
   
 * Salat sub class deliver now extra output format by present times in Unix timestamp 
   to provide users more flexibility in handle it.
+
+* Tag HTML page content if it is belong to forum, currently recognize only vBulletin.
   
 * Fix the transliteration issue of ال precedes a word beginning with one of the
   "sun letters", and issue of ة when it used in combined words to romanized as 

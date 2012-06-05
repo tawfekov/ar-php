@@ -599,6 +599,27 @@ class I18N_Arabic
         
         return $pattern;
     }
+    
+    /**
+     * There is still a lack of original, localized, high-quality content and well-structured 
+     * Arabic websites; This method help in tag HTML result pages from Arabic forum to enable 
+     * filter it in/out.
+     *
+     * @param string  $html The HTML content of the page in question
+     *
+     * @return boolean True if the input HTML is belong to a forum page
+     * @author Khaled Al-Shamaa <khaled@ar-php.org>
+     */
+    public static function isForum($html)
+    {
+        $forum = FALSE;
+        
+        if (strpos($html, 'vBulletin_init();') !== FALSE) {
+            $forum = TRUE;
+        }
+        
+        return $forum;
+    }
 }
 
 /**
