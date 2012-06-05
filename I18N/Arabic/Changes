@@ -26,6 +26,8 @@ What's new in ArPHP 3.1.0 (release date: #######)
 * Replace PNG version of Arabic countries flags by higher resolution SVG version 
   from Wikipedia.
 
+* Add countries full/long name to the "arab_countries.xml" file.
+  
 * Convert time presented in the "Info.php" example to GMT based on the server time 
   zone offset.
 

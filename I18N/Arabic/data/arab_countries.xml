@@ -5,6 +5,10 @@
       <english>Algeria</english>
       <arabic>الجزائر</arabic>
     </name>
+    <longname>
+      <english>People’s Democratic Republic of Algeria</english>
+      <arabic>الجمهورية الجزائرية الديمقراطية الشعبية</arabic>
+    </longname>
     <capital>
       <english>Algiers</english>
       <arabic>الجزائر</arabic>
@@ -31,6 +35,10 @@
       <english>Bahrain</english>
       <arabic>البحرين</arabic>
     </name>
+    <longname>
+      <english>Kingdom of Bahrain</english>
+      <arabic>مملكة البحرين</arabic>
+    </longname>
     <capital>
       <english>Manama</english>
       <arabic>المنامة</arabic>
@@ -57,6 +65,10 @@
       <english>Djibouti</english>
       <arabic>جيبوتي</arabic>
     </name>
+    <longname>
+      <english>Republic of Djibouti</english>
+      <arabic>جمهورية جيبوتي</arabic>
+    </longname>
     <capital>
       <english>Djibouti</english>
       <arabic>جيبوتي</arabic>
@@ -83,6 +95,10 @@
       <english>Egypt</english>
       <arabic>مصر</arabic>
     </name>
+    <longname>
+      <english>Arab Republic of Egypt</english>
+      <arabic>جمهورية مصر العربية</arabic>
+    </longname>
     <capital>
       <english>Cairo</english>
       <arabic>القاهرة</arabic>
@@ -112,6 +128,10 @@
       <english>Iraq</english>
       <arabic>العراق</arabic>
     </name>
+    <longname>
+      <english>Republic of Iraq</english>
+      <arabic>جمهورية العـراق</arabic>
+    </longname>
     <capital>
       <english>Bagdād</english>
       <arabic>بغداد</arabic>
@@ -141,6 +161,10 @@
       <english>Jordan</english>
       <arabic>الأردن</arabic>
     </name>
+    <longname>
+      <english>Hashemite Kingdom of Jordan</english>
+      <arabic>المملكة الأردنية الهاشمية</arabic>
+    </longname>
     <capital>
       <english>Ammān</english>
       <arabic>عمان</arabic>
@@ -170,6 +194,10 @@
       <english>Kuwait</english>
       <arabic>الكويت</arabic>
     </name>
+    <longname>
+      <english>State of Kuwait</english>
+      <arabic>دولة الكويت</arabic>
+    </longname>
     <capital>
       <english>Al-Kuwayt</english>
       <arabic>الكويت</arabic>
@@ -196,6 +224,10 @@
       <english>Lebanon</english>
       <arabic>لبنان</arabic>
     </name>
+    <longname>
+      <english>Lebanese Republic</english>
+      <arabic>الجمهورية اللبنانية</arabic>
+    </longname>
     <capital>
       <english>Bayrūt</english>
       <arabic>بيروت</arabic>
@@ -225,6 +257,10 @@
       <english>Libya</english>
       <arabic>ليبيا</arabic>
     </name>
+    <longname>
+      <english>Libya</english>
+      <arabic>ليبيا</arabic>
+    </longname>
     <capital>
       <english>Tripoli</english>
       <arabic>طرابلس</arabic>
@@ -251,9 +287,13 @@
       <english>Mauritania</english>
       <arabic>موريتانيا</arabic>
     </name>
+    <longname>
+      <english>Islamic Republic of Mauritania</english>
+      <arabic>الجمهورية الإسلامية الموريتانية</arabic>
+    </longname>
     <capital>
       <english>Nouakchott</english>
-      <arabic>انواكشوط</arabic>
+      <arabic>نواكشوط</arabic>
       <latitude>18.09</latitude>
       <longitude>-15.98</longitude>
 	  <elevation>3</elevation>
@@ -277,6 +317,10 @@
       <english>Morocco</english>
       <arabic>المغرب</arabic>
     </name>
+    <longname>
+      <english>Kingdom of Morocco</english>
+      <arabic>المملكة المغربية</arabic>
+    </longname>
     <capital>
       <english>Rabat</english>
       <arabic>الرباط</arabic>
@@ -306,6 +350,10 @@
       <english>Oman</english>
       <arabic>عمان</arabic>
     </name>
+    <longname>
+      <english>Sultanate of Oman</english>
+      <arabic>سلطنة عمان</arabic>
+    </longname>
     <capital>
       <english>Muscat</english>
       <arabic>مسقط</arabic>
@@ -332,6 +380,10 @@
       <english>Palestine</english>
       <arabic>فلسطين</arabic>
     </name>
+    <longname>
+      <english>Palestinian National Authority</english>
+      <arabic>السلطة الفلسطينية</arabic>
+    </longname>
     <capital>
       <english>Jerusalem</english>
       <arabic>القدس</arabic>
@@ -358,6 +410,10 @@
       <english>Qatar</english>
       <arabic>قطر</arabic>
     </name>
+    <longname>
+      <english>State of Qatar</english>
+      <arabic>دولة قطر</arabic>
+    </longname>
     <capital>
       <english>Doha</english>
       <arabic>الدوحة</arabic>
@@ -382,8 +438,12 @@
   <country>
     <name>
       <english>Saudi Arabia</english>
-      <arabic>المملكة العربية السعودية</arabic>
+      <arabic>السعودية</arabic>
     </name>
+    <longname>
+      <english>Kingdom of Saudi Arabia</english>
+      <arabic>المملكة العربية السعودية</arabic>
+    </longname>
     <capital>			
       <english>Riyadh</english>
       <arabic>الرياض</arabic>
@@ -410,6 +470,10 @@
       <english>Somalia</english>
       <arabic>الصومال</arabic>
     </name>
+    <longname>
+      <english>Somali Republic</english>
+      <arabic>جمهورية الصومال</arabic>
+    </longname>
     <capital>
       <english>Muqdisho</english>
       <arabic>مقديشو</arabic>
@@ -436,6 +500,10 @@
       <english>Sudan</english>
       <arabic>السودان</arabic>
     </name>
+    <longname>
+      <english>Republic of the Sudan</english>
+      <arabic>جمهورية السودان</arabic>
+    </longname>
     <capital>
       <english>Khartoum</english>
       <arabic>الخرطوم</arabic>
@@ -462,6 +530,10 @@
       <english>Syria</english>
       <arabic>سوريا</arabic>
     </name>
+    <longname>
+      <english>Syrian Arab Republic</english>
+      <arabic>الجمهورية العربية السورية</arabic>
+    </longname>
     <capital>
       <english>Damascus</english>
       <arabic>دمشق</arabic>
@@ -491,6 +563,10 @@
       <english>Tunisia</english>
       <arabic>تونس</arabic>
     </name>
+    <longname>
+      <english>Republic of Tunisia</english>
+      <arabic>الجمهورية التونسية</arabic>
+    </longname>
     <capital>
       <english>Tunis</english>
       <arabic>تونس</arabic>
@@ -515,8 +591,12 @@
   <country>
     <name>
       <english>United Arab Emirates</english>
-      <arabic>الإمارات العربية المتحدة</arabic>
+      <arabic>الإمارات</arabic>
     </name>
+    <longname>
+      <english>United Arab Emirates</english>
+      <arabic>الإمارات العربية المتحدة</arabic>
+    </longname>
     <capital>
       <english>Abu Dhabi</english>
       <arabic>أبو ظبى</arabic>
@@ -543,6 +623,10 @@
       <english>Yemen</english>
       <arabic>اليمن</arabic>
     </name>
+    <longname>
+      <english>Republic of Yemen</english>
+      <arabic>الجمهورية اليمنية</arabic>
+    </longname>
     <capital>
       <english>Şan'ā</english>
       <arabic>صنعاء</arabic>
