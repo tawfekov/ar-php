@@ -33,17 +33,17 @@ $file = '../data/arab_countries.xml';
 // load XML file
 $xml = simplexml_load_file($file) or die ('Unable to load XML file!');
 
-//$xml = $xml->xpath("/countries/country[.//timezone = '+3' or .//elevation > 100]");
-
 if ($_GET['lang'] == 'arabic') {
     $lang = 'arabic';
+    $dir  = 'rtl';
     echo '<a href="Info.php?lang=english">English</a>';
 } else {
     $lang = 'english';
+    $dir  = 'ltr';
     echo '<a href="Info.php?lang=arabic">Arabic</a>';
 }
 
-echo '<table width="98%" cellpadding="5" cellspacing="2">';
+echo '<table width="98%" cellpadding="5" cellspacing="2" dir="'.$dir.'">';
 
 echo '<tr>';
 echo '<td><b><u>Country</u></b></td>';
@@ -59,7 +59,8 @@ echo '</tr>';
 foreach ($xml as $country) {
     echo ($i++ % 2)? '<tr bgcolor="#F5F5F5">' : '<tr bgcolor="#E5E5E5">';
     
-    echo '<td><a href="../images/flags/'.$country->name->english.'.png" target="_blank">'.$country->name->$lang.'</a></td>';
+    echo '<td><a href="../images/flags/'.$country->name->english.'.svg" target="_blank">'.$country->name->$lang.'</a>';
+    echo ' ('.$country->longname->$lang.')</td>';
 
     $lat = substr($country->capital->latitude, 0, -3);
     if(substr($country->capital->latitude, -1) == 'S') $lat = -1 * $lat;
@@ -108,13 +109,15 @@ $code = <<< END
 
     if (\$_GET['lang'] == 'arabic') {
         \$lang = 'arabic';
+        \$dir  = 'rtl';
         echo '<a href="Info.php?lang=english">English</a>';
     } else {
         \$lang = 'english';
+        \$dir  = 'ltr';
         echo '<a href="Info.php?lang=arabic">Arabic</a>';
     }
     
-    echo '<table width="98%" cellpadding="5" cellspacing="2">';
+    echo '<table width="98%" cellpadding="5" cellspacing="2" dir="'.\$dir.'">';
 
     echo '<tr>';
     echo '<td><b><u>Country</u></b></td>';
@@ -130,7 +133,8 @@ $code = <<< END
     foreach (\$xml as \$country) {
         echo (\$i++ % 2)? '<tr bgcolor="#F5F5F5">' : '<tr bgcolor="#E5E5E5">';
         
-        echo '<td><a href="../images/flags/'.\$country->name->english.'.png" target="_blank">'.\$country->name->\$lang.'</a></td>';
+        echo '<td><a href="../images/flags/'.\$country->name->english.'.svg" target="_blank">'.\$country->name->\$lang.'</a>';
+        echo ' ('.\$country->longname->\$lang.')</td>';
 
         \$lat = substr(\$country->capital->latitude, 0, -3);
         if(substr(\$country->capital->latitude, -1) == 'S') \$lat = -1 * \$lat;
