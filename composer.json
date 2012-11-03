@@ -1,27 +1,9 @@
 {
-    
     "name": "ar-php/ar-php",
-    "description": "helper libaray for dealing with arabic language",
-    "type": "library",
-    "license": "LGPL",
-    "keywords": [
-        "arabic",
-        "ar",
-        "php",
-        "arabic language tools for php"
-    ],
-    "homepage": "http://www.ar-php.org/",
-    "authors": [
-        {
-            "name": "Khaled Al Shamaa",
-            "email": "khaled@ar-php.org",
-            "homepage": "http://kalshamaa.wordpress.com/"
-        }
-    ],
     "require": {
         "php": ">=5.3.0"
-    },
+    }
     "autoload": {
-        "files": ["I18N/Arabic.php"]
+	" classmap ": ["autoload_classmap.php "]
     }
 }
