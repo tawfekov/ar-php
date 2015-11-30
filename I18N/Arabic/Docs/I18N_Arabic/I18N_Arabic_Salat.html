@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>Docs For Class I18N_Arabic_Salat</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../media/style.css">
 </head>
 <body>
@@ -26,7 +27,6 @@
   <tr valign="top">
     <td width="200" class="menu">
 	<div id="ric">
-					<p><a href="../ric_1-Install.html">1-Install</a></p>
 					<p><a href="../ric_Changes.html">Changes</a></p>
 					<p><a href="../ric_GPL.html">GPL</a></p>
 					<p><a href="../ric_LGPL.html">LGPL</a></p>
@@ -136,7 +136,7 @@ Source Location: /Arabic/Salat.php<br /><br />
 
 <h4>Copyright:</h4>
 <ul>
-  <li>2006-2012 Khaled Al-Sham'aa</li>
+  <li>2006-2013 Khaled Al-Sham'aa</li>
 </ul>
         
 </td>
@@ -181,7 +181,7 @@ This PHP class calculate the time of Muslim prayer according to the geographic  
     <td><b>author:</b>&nbsp;&nbsp;</td><td>Khaled Al-Sham'aa &lt;<a href="mailto:khaled@ar-php.org">khaled@ar-php.org</a>&gt;</td>
   </tr>
   <tr>
-    <td><b>copyright:</b>&nbsp;&nbsp;</td><td>2006-2012 Khaled Al-Sham'aa</td>
+    <td><b>copyright:</b>&nbsp;&nbsp;</td><td>2006-2013 Khaled Al-Sham'aa</td>
   </tr>
   <tr>
     <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://www.ar-php.org">http://www.ar-php.org</a></td>
@@ -202,7 +202,7 @@ This PHP class calculate the time of Muslim prayer according to the geographic  
 
   <hr />
 	<a name="methodcoordinate2deg"></a>
-	<h3>method coordinate2deg <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__ArabicSalat.php.html#a743">743</a>]</span></h3>
+	<h3>method coordinate2deg <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__ArabicSalat.php.html#a638">638</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -244,7 +244,7 @@ $value)</code>
   </div>
   <hr />
 	<a name="methodgetPrayTime"></a>
-	<h3>method getPrayTime <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__ArabicSalat.php.html#a403">403</a>]</span></h3>
+	<h3>method getPrayTime <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__ArabicSalat.php.html#a404">404</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -253,21 +253,21 @@ $value)</code>
     </td></tr></table>
     </td></tr></table><br />
 	
-		Calculate Salat times for the date set in setSalatDate methode, and  location set in setSalatLocation.<br /><br /><br /><br />
+		Alias for getPrayTime2 method<br /><br /><br /><br />
 <h4>Tags:</h4>
 <div class="tags">
 <table border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td><b>return:</b>&nbsp;&nbsp;</td><td>of Salat times + sun rise in the following format                hh:mm where hh is the hour in local format and 24 mode                mm is minutes with leading zero to be 2 digits always                array items is [Fajr, Sunrise, Zuhr, Asr, Maghrib, Isha]</td>
+    <td><b>return:</b>&nbsp;&nbsp;</td><td>of Salat times + sun rise in the following format                hh:mm where hh is the hour in local format and 24 mode                mm is minutes with leading zero to be 2 digits always                array items is [$Fajr, $Sunrise, $Dhuhr, $Asr, $Maghrib,                $Isha, $Sunset, $Midnight, $Imsak, array $timestamps]</td>
   </tr>
   <tr>
-    <td><b>author:</b>&nbsp;&nbsp;</td><td>Mohamad Magdy &lt;<a href="mailto:mohamad_magdy_egy@hotmail.com">mohamad_magdy_egy@hotmail.com</a>&gt;</td>
+    <td><b>author:</b>&nbsp;&nbsp;</td><td>Hamid Zarrabi-Zadeh &lt;<a href="mailto:zarrabi@scs.carleton.ca">zarrabi@scs.carleton.ca</a>&gt;</td>
   </tr>
   <tr>
     <td><b>author:</b>&nbsp;&nbsp;</td><td>Khaled Al-Sham'aa &lt;<a href="mailto:khaled@ar-php.org">khaled@ar-php.org</a>&gt;</td>
   </tr>
   <tr>
-    <td><b>source:</b>&nbsp;&nbsp;</td><td>http://qasweb.org/qasforum/index.php?showtopic=177&amp;st=0</td>
+    <td><b>source:</b>&nbsp;&nbsp;</td><td>http://praytimes.org/calculation</td>
   </tr>
   <tr>
     <td><b>access:</b>&nbsp;&nbsp;</td><td>public</td>
@@ -281,7 +281,7 @@ $value)</code>
   </div>
   <hr />
 	<a name="methodgetPrayTime2"></a>
-	<h3>method getPrayTime2 <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__ArabicSalat.php.html#a553">553</a>]</span></h3>
+	<h3>method getPrayTime2 <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__ArabicSalat.php.html#a424">424</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -290,12 +290,12 @@ $value)</code>
     </td></tr></table>
     </td></tr></table><br />
 	
-		Another algorithm (more accurate) to calculate Salat times for the date  set in setSalatDate methode, and location set in setSalatLocation.<br /><br /><br /><br />
+		Calculate Salat times for the date set in setSalatDate methode, and  location set in setSalatLocation.<br /><br /><br /><br />
 <h4>Tags:</h4>
 <div class="tags">
 <table border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td><b>return:</b>&nbsp;&nbsp;</td><td>of Salat times + sun rise in the following format                hh:mm where hh is the hour in local format and 24 mode                mm is minutes with leading zero to be 2 digits always                array items is [$Fajr, $Sunrise, $Dhuhr, $Asr, $Maghrib,                                $Isha, $Sunset, $Midnight, $Imsak]</td>
+    <td><b>return:</b>&nbsp;&nbsp;</td><td>of Salat times + sun rise in the following format                hh:mm where hh is the hour in local format and 24 mode                mm is minutes with leading zero to be 2 digits always                array items is [$Fajr, $Sunrise, $Dhuhr, $Asr, $Maghrib,                $Isha, $Sunset, $Midnight, $Imsak, array $timestamps]</td>
   </tr>
   <tr>
     <td><b>author:</b>&nbsp;&nbsp;</td><td>Hamid Zarrabi-Zadeh &lt;<a href="mailto:zarrabi@scs.carleton.ca">zarrabi@scs.carleton.ca</a>&gt;</td>
@@ -318,7 +318,7 @@ $value)</code>
   </div>
   <hr />
 	<a name="methodgetQibla"></a>
-	<h3>method getQibla <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__ArabicSalat.php.html#a708">708</a>]</span></h3>
+	<h3>method getQibla <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__ArabicSalat.php.html#a602">602</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -538,7 +538,7 @@ $e = 0])</code>
 
         <div class="credit">
 		    <hr />
-		    Documentation generated on Tue, 17 Jan 2012 09:18:26 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.0</a>
+		    Documentation generated on Mon, 14 Jan 2013 17:49:05 +0100 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.0</a>
 	      </div>
       </td></tr></table>
     </td>

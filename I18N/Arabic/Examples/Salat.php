@@ -18,7 +18,7 @@
  * @category  I18N
  * @package   I18N_Arabic
  * @author    Khaled Al-Sham'aa <khaled@ar-php.org>
- * @copyright 2006-2011 Khaled Al-Sham'aa
+ * @copyright 2006-2013 Khaled Al-Sham'aa
  *
  * @license   LGPL <http://www.gnu.org/licenses/lgpl.txt>
  * @link      http://www.ar-php.org
@@ -43,7 +43,7 @@ echo "<b>Damascus, Syria</b> ".date('l F j, Y')."<br /><br />";
 // Salat calculation configuration: Egyptian General Authority of Survey
 $Arabic->setConf('Shafi', -0.833333, -17.5, -19.5, 'Sunni');
 
-$times = $Arabic->getPrayTime2();
+$times = $Arabic->getPrayTime();
 
 echo "<b>Imsak:</b> {$times[8]}<br />";
 echo "<b>Fajr:</b> {$times[0]}<br />";
@@ -68,7 +68,6 @@ echo '<b>Midnight:</b> '.date('l j F Y g:i a', $times[9][7]).'<br /><br />';
 $direction = $Arabic->getQibla();
 echo "<b>Qibla Direction (from the north direction):</b> $direction ";
 echo "(<a href=\"./Qibla.php?d=$direction\" target=_blank>click here</a>)<br /><br/>";
-
 ?>
 </div><br />
 <div class="Paragraph">
@@ -91,7 +90,7 @@ $code = <<< END
 
     // Salat calculation configuration: Egyptian General Authority of Survey
     \$Arabic->setConf('Shafi', -0.833333,  -17.5, -19.5, 'Sunni');
-    \$times = \$Arabic->getPrayTime2();
+    \$times = \$Arabic->getPrayTime();
     
     echo "<b>Imsak:</b> {\$times[8]}<br />";
     echo "<b>Fajr:</b> {\$times[0]}<br />";

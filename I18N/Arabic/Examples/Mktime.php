@@ -19,7 +19,7 @@
  * @category  I18N
  * @package   I18N_Arabic
  * @author    Khaled Al-Sham'aa <khaled@ar-php.org>
- * @copyright 2006-2011 Khaled Al-Sham'aa
+ * @copyright 2006-2013 Khaled Al-Sham'aa
  *
  * @license   LGPL <http://www.gnu.org/licenses/lgpl.txt>
  * @link      http://www.ar-php.org
@@ -35,12 +35,14 @@ $Arabic = new I18N_Arabic('Mktime');
 
 $correction = $Arabic->mktimeCorrection(9, 1429);
 $time = $Arabic->mktime(0, 0, 0, 9, 1, 1429, $correction);
-
 echo "Calculated first day of Ramadan 1429 unix timestamp is: $time<br>";
 
 $Gregorian = date('l F j, Y', $time);
+echo "Which is $Gregorian in Gregorian calendar<br>";
 
-echo "Which is $Gregorian in Gregorian calendar";
+$days = $Arabic->hijriMonthDays(9, 1429);
+echo "That Ramadan has $days days in total";
+
 ?>
 </div><br />
 <div class="Paragraph">
@@ -54,13 +56,14 @@ $code = <<< END
     \$Arabic = new I18N_Arabic('Mktime');
 
     \$correction = \$Arabic->mktimeCorrection(9, 1429);
-    \$time = \$Arabic->mktime(0, 0, 0, 9, 1, 1429, \$correction);
-    
+    \$time = \$Arabic->mktime(0, 0, 0, 9, 1, 1429, \$correction);    
     echo "Calculated first day of Ramadan 1429 unix timestamp is: \$time<br>";
     
     \$Gregorian = date('l F j, Y', \$time);
-    
     echo "Which is \$Gregorian in Gregorian calendar";
+
+    \$days = \$Arabic->hijriMonthDays(9, 1429);
+    echo "That Ramadan has \$days days in total";
 END;
 
 highlight_string($code);

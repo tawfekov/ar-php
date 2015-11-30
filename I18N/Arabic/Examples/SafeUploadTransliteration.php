@@ -10,7 +10,7 @@
 <body>
 <div class="Paragraph">
 <h2 dir="ltr">Safe Upload Examples Output:</h2>
-<p><i>PHP5 is not capable of addressing files with multi-byte characters in their names at all.</i></p>
+<p><i>PHP5 is not capable of addressing files with multi-byte characters in their names at all (including Arabic language).</i></p>
 
 <?php
 /**
@@ -19,7 +19,7 @@
  * @category  I18N
  * @package   I18N_Arabic
  * @author    Khaled Al-Sham'aa <khaled@ar-php.org>
- * @copyright 2006-2011 Khaled Al-Sham'aa
+ * @copyright 2006-2013 Khaled Al-Sham'aa
  *
  * @license   LGPL <http://www.gnu.org/licenses/lgpl.txt>
  * @link      http://www.ar-php.org
@@ -49,9 +49,8 @@ if (isset($_POST['submit'])) {
                 $filename = trim($Arabic->ar2en($_FILES['image']['name']));
 
                 // Moves an uploaded file to a new location
-                move_uploaded_file($_FILES['image']['tmp_name'], $filename);
-                
-                echo "<a href=\"$filename\" target=_blank>$filename</a><br />";
+                // move_uploaded_file ($_FILES['image']['tmp_name'], $dir.DIRECTORY_SEPARATOR.$filename);
+                echo "move_uploaded_file(\$_FILES['image']['tmp_name'], \$dir.DIRECTORY_SEPARATOR.'$filename');";
             } else {
                 echo '<h3>You can upload image file only (i.e. gif, jpg, png, and svg)!</h3>';
             }
@@ -64,14 +63,21 @@ if (isset($_POST['submit'])) {
 }
 
 ?>
+<br /><br />
 
-<form  action="SafeUpload.php" method="post" enctype="multipart/form-data">
+<form  action="SafeUploadTransliteration.php" method="post" enctype="multipart/form-data">
 
     <input name="image" type="file" size="60">
 
     <input name="submit" type="submit" value="Upload">
 
 </form>
+
+<h4>Verified Conditions:</h4>
+<ol>
+    <li>Max uploaded file size is 1 MB</li>
+    <li>Accepted MIME Content-types are: image/jpeg, image/gif, image/png, and image/svg+xml</li>
+</ol>
 
 </div><br />
 
@@ -105,9 +111,7 @@ if(isset(\$_POST['submit'])){
                 \$filename = trim(\$Arabic->ar2en(\$_FILES['image']['name']));
                 
                 // Moves an uploaded file to a new location
-                move_uploaded_file (\$_FILES['image']['tmp_name'], \$filename);
-                
-                echo "<a href=\"\$filename\" target=_blank>\$filename</a><br />";
+                move_uploaded_file (\$_FILES['image']['tmp_name'], \$dir.DIRECTORY_SEPARATOR.\$filename);
             } else {
                 echo '<h3>You can upload image file only (i.e. gif, jpg, png, and svg)!</h3>';
             }
@@ -121,7 +125,7 @@ if(isset(\$_POST['submit'])){
 
 ?>
 
-<form  action="SafeUpload.php" method="post" enctype="multipart/form-data">
+<form  action="SafeUploadTransliteration.php" method="post" enctype="multipart/form-data">
 
     <input name="image" type="file" size="60">
 

@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>Docs For Class I18N_Arabic</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../media/style.css">
 </head>
 <body>
@@ -26,7 +27,6 @@
   <tr valign="top">
     <td width="200" class="menu">
 	<div id="ric">
-					<p><a href="../ric_1-Install.html">1-Install</a></p>
 					<p><a href="../ric_Changes.html">Changes</a></p>
 					<p><a href="../ric_GPL.html">GPL</a></p>
 					<p><a href="../ric_LGPL.html">LGPL</a></p>
@@ -136,7 +136,7 @@ Source Location: /Arabic.php<br /><br />
 
 <h4>Copyright:</h4>
 <ul>
-  <li>2006-2012 Khaled Al-Shamaa</li>
+  <li>2006-2013 Khaled Al-Shamaa</li>
 </ul>
         
 </td>
@@ -156,9 +156,9 @@ Source Location: /Arabic.php<br /><br />
     <li><a href="../I18N_Arabic/I18N_Arabic.html#methodgetInputCharset">getInputCharset</a></li>
     <li><a href="../I18N_Arabic/I18N_Arabic.html#methodgetOutputCharset">getOutputCharset</a></li>
     <li><a href="../I18N_Arabic/I18N_Arabic.html#methodheader">header</a></li>
+    <li><a href="../I18N_Arabic/I18N_Arabic.html#methodisForum">isForum</a></li>
     <li><a href="../I18N_Arabic/I18N_Arabic.html#methodload">load</a></li>
     <li><a href="../I18N_Arabic/I18N_Arabic.html#methodmyErrorHandler">myErrorHandler</a></li>
-    <li><a href="../I18N_Arabic/I18N_Arabic.html#methodpregPattern">pregPattern</a></li>
     <li><a href="../I18N_Arabic/I18N_Arabic.html#methodsetInputCharset">setInputCharset</a></li>
     <li><a href="../I18N_Arabic/I18N_Arabic.html#methodsetOutputCharset">setOutputCharset</a></li>
     <li><a href="../I18N_Arabic/I18N_Arabic.html#method__call">__call</a></li>
@@ -190,7 +190,7 @@ Core PHP and Arabic language class<br /><br /><br /><br />
     <td><b>author:</b>&nbsp;&nbsp;</td><td>Khaled Al-Shamaa &lt;<a href="mailto:khaled@ar-php.org">khaled@ar-php.org</a>&gt;</td>
   </tr>
   <tr>
-    <td><b>copyright:</b>&nbsp;&nbsp;</td><td>2006-2012 Khaled Al-Shamaa</td>
+    <td><b>copyright:</b>&nbsp;&nbsp;</td><td>2006-2013 Khaled Al-Shamaa</td>
   </tr>
   <tr>
     <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://www.ar-php.org">http://www.ar-php.org</a></td>
@@ -249,7 +249,7 @@ $className)</code>
   </div>
   <hr />
 	<a name="methodgetBrowserLang"></a>
-	<h3>static method getBrowserLang <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a542">542</a>]</span></h3>
+	<h3>static method getBrowserLang <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a550">550</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -280,7 +280,7 @@ $className)</code>
   </div>
   <hr />
 	<a name="methodgetClassFile"></a>
-	<h3>static method getClassFile <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a465">465</a>]</span></h3>
+	<h3>static method getClassFile <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a473">473</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -322,7 +322,7 @@ $class)</code>
   </div>
   <hr />
 	<a name="methodheader"></a>
-	<h3>static method header <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a482">482</a>]</span></h3>
+	<h3>static method header <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a491">491</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -338,7 +338,7 @@ $conn = null])</code>
 <div class="tags">
 <table border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td><b>return:</b>&nbsp;&nbsp;</td><td>header formula if there is any (in cases of html, text_email, and html_email)</td>
+    <td><b>return:</b>&nbsp;&nbsp;</td><td>header formula if there is any (in cases of html,                 text_email, and html_email)</td>
   </tr>
   <tr>
     <td><b>author:</b>&nbsp;&nbsp;</td><td>Khaled Al-Shamaa &lt;<a href="mailto:khaled@ar-php.org">khaled@ar-php.org</a>&gt;</td>
@@ -363,6 +363,48 @@ $conn = null])</code>
         <td class="type">resource&nbsp;&nbsp;</td>
         <td><b>$conn</b>&nbsp;&nbsp;</td>
         <td>The MySQL connection handler/the link identifier</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodisForum"></a>
+	<h3>static method isForum <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a567">567</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>static boolean isForum(
+string
+$html)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		There is still a lack of original, localized, high-quality content and  well-structured Arabic websites; This method help in tag HTML result pages  from Arabic forum to enable filter it in/out.<br /><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>return:</b>&nbsp;&nbsp;</td><td>True if the input HTML is belong to a forum page</td>
+  </tr>
+  <tr>
+    <td><b>author:</b>&nbsp;&nbsp;</td><td>Khaled Al-Shamaa &lt;<a href="mailto:khaled@ar-php.org">khaled@ar-php.org</a>&gt;</td>
+  </tr>
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>public</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$html</b>&nbsp;&nbsp;</td>
+        <td>The HTML content of the page in question</td>
       </tr>
         </table>
     </div><br />
@@ -428,54 +470,6 @@ $errline)</code>
     </div><br />
         <div class="top">[ <a href="#top">Top</a> ]</div>
   </div>
-  <hr />
-	<a name="methodpregPattern"></a>
-	<h3>static method pregPattern <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a570">570</a>]</span></h3>
-	<div class="function">
-    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
-    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
-		<code>static string pregPattern(
-string
-$pattern, [boolean
-$vowels = true])</code>
-    </td></tr></table>
-    </td></tr></table><br />
-	
-		Renders regular expression pattern using an enhanced version of syntax and semantics  to support arabic version of some specifying generic character types<br /><br /><br /><br />
-<h4>Tags:</h4>
-<div class="tags">
-<table border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td><b>return:</b>&nbsp;&nbsp;</td><td>Rendered regular expression pattern</td>
-  </tr>
-  <tr>
-    <td><b>author:</b>&nbsp;&nbsp;</td><td>Khaled Al-Shamaa &lt;<a href="mailto:khaled@ar-php.org">khaled@ar-php.org</a>&gt;</td>
-  </tr>
-  <tr>
-    <td><b>access:</b>&nbsp;&nbsp;</td><td>public</td>
-  </tr>
-</table>
-</div>
-<br /><br />
-
-	
-        <h4>Parameters:</h4>
-    <div class="tags">
-    <table border="0" cellspacing="0" cellpadding="0">
-          <tr>
-        <td class="type">string&nbsp;&nbsp;</td>
-        <td><b>$pattern</b>&nbsp;&nbsp;</td>
-        <td>The pattern to search for, as a string using syntax and                          semantics of the regular expressions enhanced by arabic                          version of some specifying generic character types:                          \[ar]w    any Arabic letter (including Harakat and Tatweel if $vowels is true)                          \[ar]d    any decimal Arabic-Indic digit                          \[ar]v    any Arabic vowel character (i.e. Harakat including Tatweel)                          \[ar]p    any Arabic puncation character                          \[ar]W    any character that is not an  Arabic letter (including Harakat and Tatweel if $vowels is true)                          \[ar]D    any character that is not a decimal Arabic-Indic digit                          \[ar]V    any character that is not an Arabic vowel character (i.e. Harakat including Tatweel)                          \[ar]P    any character that is not an Arabic puncation character</td>
-      </tr>
-          <tr>
-        <td class="type">boolean&nbsp;&nbsp;</td>
-        <td><b>$vowels</b>&nbsp;&nbsp;</td>
-        <td>True will include Harakat and Tatweel to the Arabic                          letters set (default is true)</td>
-      </tr>
-        </table>
-    </div><br />
-        <div class="top">[ <a href="#top">Top</a> ]</div>
-  </div>
 
   <hr />
 	<a name="method__construct"></a>
@@ -536,7 +530,7 @@ $compatibleMode = true])</code>
   </div>
   <hr />
 	<a name="method__destruct"></a>
-	<h3>destructor __destruct <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a308">308</a>]</span></h3>
+	<h3>destructor __destruct <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a316">316</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -564,7 +558,7 @@ $compatibleMode = true])</code>
   </div>
   <hr />
 	<a name="methodconvert"></a>
-	<h3>method convert <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a441">441</a>]</span></h3>
+	<h3>method convert <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a449">449</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -618,7 +612,7 @@ $outputCharset = null])</code>
   </div>
   <hr />
 	<a name="methodcoreConvert"></a>
-	<h3>method coreConvert <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a395">395</a>]</span></h3>
+	<h3>method coreConvert <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a403">403</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -672,7 +666,7 @@ $outputCharset)</code>
   </div>
   <hr />
 	<a name="methodgetInputCharset"></a>
-	<h3>method getInputCharset <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a368">368</a>]</span></h3>
+	<h3>method getInputCharset <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a376">376</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -703,7 +697,7 @@ $outputCharset)</code>
   </div>
   <hr />
 	<a name="methodgetOutputCharset"></a>
-	<h3>method getOutputCharset <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a379">379</a>]</span></h3>
+	<h3>method getOutputCharset <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a387">387</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -734,7 +728,7 @@ $outputCharset)</code>
   </div>
   <hr />
 	<a name="methodload"></a>
-	<h3>method load <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a227">227</a>]</span></h3>
+	<h3>method load <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a230">230</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -773,7 +767,7 @@ $library)</code>
   </div>
   <hr />
 	<a name="methodsetInputCharset"></a>
-	<h3>method setInputCharset <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a324">324</a>]</span></h3>
+	<h3>method setInputCharset <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a332">332</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -815,7 +809,7 @@ $charset)</code>
   </div>
   <hr />
 	<a name="methodsetOutputCharset"></a>
-	<h3>method setOutputCharset <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a347">347</a>]</span></h3>
+	<h3>method setOutputCharset <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a355">355</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -857,7 +851,7 @@ $charset)</code>
   </div>
   <hr />
 	<a name="method__call"></a>
-	<h3>method __call <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a262">262</a>]</span></h3>
+	<h3>method __call <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__Arabic.php.html#a266">266</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -908,7 +902,7 @@ $arguments)</code>
 
         <div class="credit">
 		    <hr />
-		    Documentation generated on Tue, 17 Jan 2012 09:18:06 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.0</a>
+		    Documentation generated on Mon, 14 Jan 2013 17:48:34 +0100 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.0</a>
 	      </div>
       </td></tr></table>
     </td>

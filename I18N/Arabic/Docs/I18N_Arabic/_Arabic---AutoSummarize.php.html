@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>Docs for page AutoSummarize.php</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../media/style.css">
 </head>
 <body>
@@ -26,7 +27,6 @@
   <tr valign="top">
     <td width="200" class="menu">
 	<div id="ric">
-					<p><a href="../ric_1-Install.html">1-Install</a></p>
 					<p><a href="../ric_Changes.html">Changes</a></p>
 					<p><a href="../ric_GPL.html">GPL</a></p>
 					<p><a href="../ric_LGPL.html">LGPL</a></p>
@@ -126,7 +126,7 @@ Source Location: /Arabic/AutoSummarize.php<br /><br />
 </div><br /><br />
 
 <h2>Page Details:</h2>
-----------------------------------------------------------------------<br /><br /><p>Copyright (c) 2006-2012 Khaled Al-Sham'aa.</p><p>http://www.ar-php.org</p><p>PHP Version 5</p><p>----------------------------------------------------------------------</p><p>LICENSE</p><p>This program is open source product; you can redistribute it and/or  modify it under the terms of the GNU Lesser General Public License (LGPL)  as published by the Free Software Foundation; either version 3  of the License, or (at your option) any later version.</p><p>This program is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  GNU Lesser General Public License for more details.</p><p>You should have received a copy of the GNU Lesser General Public License  along with this program.  If not, see &lt;http://www.gnu.org/licenses/lgpl.txt&gt;.</p><p>----------------------------------------------------------------------</p><p>Class Name: Arabic Auto Summarize Class</p><p>Filename: AutoSummarize.php</p><p>Original Author(s): Khaled Al-Sham'aa &lt;khaled@ar-php.org&gt;</p><p>Purpose: Automatic keyphrase extraction to provide a quick mini-summary           for a long Arabic document.</p><p>----------------------------------------------------------------------</p><p>Arabic Auto Summarize</p><p>This class identifies the key points in an Arabic document for you to share with  others or quickly scan. The class determines key points by analyzing an Arabic  document and assigning a score to each sentence. Sentences that contain words  used frequently in the document are given a higher score. You can then choose a  percentage of the highest-scoring sentences to display in the summary.  &quot;ArAutoSummarize&quot; class works best on well-structured documents such as reports,  articles, and scientific papers.</p><p>&quot;ArAutoSummarize&quot; class cuts wordy copy to the bone by counting words and ranking  sentences. First, &quot;ArAutoSummarize&quot; class identifies the most common words in the  document and assigns a &quot;score&quot; to each word--the more frequently a word is used,  the higher the score.</p><p>Then, it &quot;averages&quot; each sentence by adding the scores of its words and dividing  the sum by the number of words in the sentence--the higher the average, the  higher the rank of the sentence. &quot;ArAutoSummarize&quot; class can summarize texts to  specific number of sentences or percentage of the original copy.</p><p>We use statistical approach, with some attention apparently paid to:</p><p><ul><li>Location: leading sentences of paragraph, title, introduction, and conclusion.</li><li>Fixed phrases: in-text summaries.</li><li>Frequencies of words, phrases, proper names</li><li>Contextual material: query, title, headline, initial paragraph</li></ul>  The motivation for this class is the range of applications for key phrases:</p><p><ul><li>Mini-summary: Automatic key phrase extraction can provide a quick mini-summary
+----------------------------------------------------------------------<br /><br /><p>Copyright (c) 2006-2013 Khaled Al-Sham'aa.</p><p>http://www.ar-php.org</p><p>PHP Version 5</p><p>----------------------------------------------------------------------</p><p>LICENSE</p><p>This program is open source product; you can redistribute it and/or  modify it under the terms of the GNU Lesser General Public License (LGPL)  as published by the Free Software Foundation; either version 3  of the License, or (at your option) any later version.</p><p>This program is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  GNU Lesser General Public License for more details.</p><p>You should have received a copy of the GNU Lesser General Public License  along with this program.  If not, see &lt;http://www.gnu.org/licenses/lgpl.txt&gt;.</p><p>----------------------------------------------------------------------</p><p>Class Name: Arabic Auto Summarize Class</p><p>Filename: AutoSummarize.php</p><p>Original Author(s): Khaled Al-Sham'aa &lt;khaled@ar-php.org&gt;</p><p>Purpose: Automatic keyphrase extraction to provide a quick mini-summary           for a long Arabic document.</p><p>----------------------------------------------------------------------</p><p>Arabic Auto Summarize</p><p>This class identifies the key points in an Arabic document for you to share with  others or quickly scan. The class determines key points by analyzing an Arabic  document and assigning a score to each sentence. Sentences that contain words  used frequently in the document are given a higher score. You can then choose a  percentage of the highest-scoring sentences to display in the summary.  &quot;ArAutoSummarize&quot; class works best on well-structured documents such as reports,  articles, and scientific papers.</p><p>&quot;ArAutoSummarize&quot; class cuts wordy copy to the bone by counting words and ranking  sentences. First, &quot;ArAutoSummarize&quot; class identifies the most common words in the  document and assigns a &quot;score&quot; to each word--the more frequently a word is used,  the higher the score.</p><p>Then, it &quot;averages&quot; each sentence by adding the scores of its words and dividing  the sum by the number of words in the sentence--the higher the average, the  higher the rank of the sentence. &quot;ArAutoSummarize&quot; class can summarize texts to  specific number of sentences or percentage of the original copy.</p><p>We use statistical approach, with some attention apparently paid to:</p><p><ul><li>Location: leading sentences of paragraph, title, introduction, and conclusion.</li><li>Fixed phrases: in-text summaries.</li><li>Frequencies of words, phrases, proper names</li><li>Contextual material: query, title, headline, initial paragraph</li></ul>  The motivation for this class is the range of applications for key phrases:</p><p><ul><li>Mini-summary: Automatic key phrase extraction can provide a quick mini-summary
    for a long document. For example, it could be a feature in a web sites; just
    click the summarize button when browsing a long web page.</li></ul> <ul><li>Highlights: It can highlight key phrases in a long document, to facilitate
    skimming the document.</li></ul> <ul><li>Author Assistance: Automatic key phrase extraction can help an author or editor
@@ -171,7 +171,7 @@ Source Location: /Arabic/AutoSummarize.php<br /><br />
     <td><b>author:</b>&nbsp;&nbsp;</td><td>Khaled Al-Sham'aa &lt;<a href="mailto:khaled@ar-php.org">khaled@ar-php.org</a>&gt;</td>
   </tr>
   <tr>
-    <td><b>copyright:</b>&nbsp;&nbsp;</td><td>2006-2012 Khaled Al-Sham'aa</td>
+    <td><b>copyright:</b>&nbsp;&nbsp;</td><td>2006-2013 Khaled Al-Sham'aa</td>
   </tr>
   <tr>
     <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://www.ar-php.org">http://www.ar-php.org</a></td>
@@ -191,7 +191,7 @@ Source Location: /Arabic/AutoSummarize.php<br /><br />
 
         <div class="credit">
 		    <hr />
-		    Documentation generated on Tue, 17 Jan 2012 09:18:06 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.0</a>
+		    Documentation generated on Mon, 14 Jan 2013 17:48:35 +0100 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.0</a>
 	      </div>
       </td></tr></table>
     </td>

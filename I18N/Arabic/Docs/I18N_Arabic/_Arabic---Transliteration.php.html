@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>Docs for page Transliteration.php</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../media/style.css">
 </head>
 <body>
@@ -26,7 +27,6 @@
   <tr valign="top">
     <td width="200" class="menu">
 	<div id="ric">
-					<p><a href="../ric_1-Install.html">1-Install</a></p>
 					<p><a href="../ric_Changes.html">Changes</a></p>
 					<p><a href="../ric_GPL.html">GPL</a></p>
 					<p><a href="../ric_LGPL.html">LGPL</a></p>
@@ -126,7 +126,7 @@ Source Location: /Arabic/Transliteration.php<br /><br />
 </div><br /><br />
 
 <h2>Page Details:</h2>
-----------------------------------------------------------------------<br /><br /><p>Copyright (c) 2006-2012 Khaled Al-Sham'aa.</p><p>http://www.ar-php.org</p><p>PHP Version 5</p><p>----------------------------------------------------------------------</p><p>LICENSE</p><p>This program is open source product; you can redistribute it and/or  modify it under the terms of the GNU Lesser General Public License (LGPL)  as published by the Free Software Foundation; either version 3  of the License, or (at your option) any later version.</p><p>This program is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  GNU Lesser General Public License for more details.</p><p>You should have received a copy of the GNU Lesser General Public License  along with this program.  If not, see &lt;http://www.gnu.org/licenses/lgpl.txt&gt;.</p><p>----------------------------------------------------------------------</p><p>Class Name: English-Arabic Transliteration</p><p>Filename:   Transliteration.php</p><p>Original    Author(s): Khaled Al-Sham'aa &lt;khaled@ar-php.org&gt;</p><p>Purpose:    Transliterate English words into Arabic by render them              in the orthography of the Arabic language and vise versa</p><p>----------------------------------------------------------------------</p><p>English-Arabic Transliteration</p><p>PHP class transliterate English words into Arabic by render them in the  orthography of the Arabic language and vise versa.</p><p>Out of vocabulary (OOV) words are a common source of errors in cross language  information retrieval. Bilingual dictionaries are often limited in their coverage  of named- entities, numbers, technical terms and acronyms. There is a need to  generate translations for these &quot;on-the-fly&quot; or at query time.</p><p>A significant proportion of OOV words are named entities and technical terms.  Typical analyses find around 50% of OOV words to be named entities. Yet these  can be the most important words in the queries. Cross language retrieval  performance (average precision) reduced more than 50% when named entities in the  queries were not translated.</p><p>When the query language and the document language share the same alphabet it may  be sufficient to use the OOV word as its own translation. However, when the two  languages have different alphabets, the query term must somehow be rendered in  the orthography of the other language. The process of converting a word from one  orthography into another is called transliteration.</p><p>Foreign words often occur in Arabic text as transliteration. This is the case for  many categories of foreign words, not just proper names but also technical terms  such as caviar, telephone and internet.</p><p>Example:  <ol><li><div class="src-line">&nbsp;&nbsp;&nbsp;<span class="src-inc">include</span><span class="src-sym">(</span><span class="src-str">'./I18N/Arabic.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+----------------------------------------------------------------------<br /><br /><p>Copyright (c) 2006-2013 Khaled Al-Sham'aa.</p><p>http://www.ar-php.org</p><p>PHP Version 5</p><p>----------------------------------------------------------------------</p><p>LICENSE</p><p>This program is open source product; you can redistribute it and/or  modify it under the terms of the GNU Lesser General Public License (LGPL)  as published by the Free Software Foundation; either version 3  of the License, or (at your option) any later version.</p><p>This program is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  GNU Lesser General Public License for more details.</p><p>You should have received a copy of the GNU Lesser General Public License  along with this program.  If not, see &lt;http://www.gnu.org/licenses/lgpl.txt&gt;.</p><p>----------------------------------------------------------------------</p><p>Class Name: English-Arabic Transliteration</p><p>Filename:   Transliteration.php</p><p>Original    Author(s): Khaled Al-Sham'aa &lt;khaled@ar-php.org&gt;</p><p>Purpose:    Transliterate English words into Arabic by render them              in the orthography of the Arabic language and vise versa</p><p>----------------------------------------------------------------------</p><p>English-Arabic Transliteration</p><p>PHP class transliterate English words into Arabic by render them in the  orthography of the Arabic language and vise versa.</p><p>Out of vocabulary (OOV) words are a common source of errors in cross language  information retrieval. Bilingual dictionaries are often limited in their coverage  of named- entities, numbers, technical terms and acronyms. There is a need to  generate translations for these &quot;on-the-fly&quot; or at query time.</p><p>A significant proportion of OOV words are named entities and technical terms.  Typical analyses find around 50% of OOV words to be named entities. Yet these  can be the most important words in the queries. Cross language retrieval  performance (average precision) reduced more than 50% when named entities in the  queries were not translated.</p><p>When the query language and the document language share the same alphabet it may  be sufficient to use the OOV word as its own translation. However, when the two  languages have different alphabets, the query term must somehow be rendered in  the orthography of the other language. The process of converting a word from one  orthography into another is called transliteration.</p><p>Foreign words often occur in Arabic text as transliteration. This is the case for  many categories of foreign words, not just proper names but also technical terms  such as caviar, telephone and internet.</p><p>Example:  <ol><li><div class="src-line">&nbsp;&nbsp;&nbsp;<span class="src-inc">include</span><span class="src-sym">(</span><span class="src-str">'./I18N/Arabic.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
 <li><div class="src-line">&nbsp;&nbsp;&nbsp;<span class="src-var">$obj&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../I18N_Arabic/I18N_Arabic.html">I18N_Arabic</a></span><span class="src-sym">(</span><span class="src-str">'Transliteration'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
 <li><div class="src-line">&nbsp;</div></li>
 <li><div class="src-line">&nbsp;&nbsp;&nbsp;<span class="src-var">$ar_word_1&nbsp;</span>=&nbsp;<span class="src-var">$obj</span><span class="src-sym">-&gt;</span><span class="src-id">en2ar</span><span class="src-sym">(</span><span class="src-var">$en_word_1</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
@@ -139,7 +139,7 @@ Source Location: /Arabic/Transliteration.php<br /><br />
     <td><b>author:</b>&nbsp;&nbsp;</td><td>Khaled Al-Sham'aa &lt;<a href="mailto:khaled@ar-php.org">khaled@ar-php.org</a>&gt;</td>
   </tr>
   <tr>
-    <td><b>copyright:</b>&nbsp;&nbsp;</td><td>2006-2012 Khaled Al-Sham'aa</td>
+    <td><b>copyright:</b>&nbsp;&nbsp;</td><td>2006-2013 Khaled Al-Sham'aa</td>
   </tr>
   <tr>
     <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://www.ar-php.org">http://www.ar-php.org</a></td>
@@ -159,7 +159,7 @@ Source Location: /Arabic/Transliteration.php<br /><br />
 
         <div class="credit">
 		    <hr />
-		    Documentation generated on Tue, 17 Jan 2012 09:18:28 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.0</a>
+		    Documentation generated on Mon, 14 Jan 2013 17:49:08 +0100 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.0</a>
 	      </div>
       </td></tr></table>
     </td>
