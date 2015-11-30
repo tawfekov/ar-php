@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>Docs for page KeySwap.php</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../media/style.css">
 </head>
 <body>
@@ -26,7 +27,6 @@
   <tr valign="top">
     <td width="200" class="menu">
 	<div id="ric">
-					<p><a href="../ric_1-Install.html">1-Install</a></p>
 					<p><a href="../ric_Changes.html">Changes</a></p>
 					<p><a href="../ric_GPL.html">GPL</a></p>
 					<p><a href="../ric_LGPL.html">LGPL</a></p>
@@ -126,7 +126,7 @@ Source Location: /Arabic/KeySwap.php<br /><br />
 </div><br /><br />
 
 <h2>Page Details:</h2>
-----------------------------------------------------------------------<br /><br /><p>Copyright (c) 2006-2012 Khaled Al-Sham'aa.</p><p>http://www.ar-php.org</p><p>PHP Version 5</p><p>----------------------------------------------------------------------</p><p>LICENSE</p><p>This program is open source product; you can redistribute it and/or  modify it under the terms of the GNU Lesser General Public License (LGPL)  as published by the Free Software Foundation; either version 3  of the License, or (at your option) any later version.</p><p>This program is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  GNU Lesser General Public License for more details.</p><p>You should have received a copy of the GNU Lesser General Public License  along with this program.  If not, see &lt;http://www.gnu.org/licenses/lgpl.txt&gt;.</p><p>----------------------------------------------------------------------</p><p>Class Name: Arabic Keyboard Swapping Language</p><p>Filename:   KeySwap.php</p><p>Original    Author(s): Khaled Al-Sham'aa &lt;khaled@ar-php.org&gt;</p><p>Purpose:    Convert keyboard language programmatically (English - Arabic)</p><p>----------------------------------------------------------------------</p><p>Arabic Keyboard Swapping Language</p><p>PHP class to convert keyboard language between English and Arabic  programmatically. This function can be helpful in dual language forms when  users miss change keyboard language while they are entering data.</p><p>If you wrote an Arabic sentence while your keyboard stays in English mode by  mistake, you will get a non-sense English text on your PC screen. In that case  you can use this class to make a kind of magic conversion to swap that odd text  by original Arabic sentence you meant when you type on your keyboard.</p><p>Please note that magic conversion in the opposite direction (if you type English  sentences while your keyboard stays in Arabic mode) is also available in this  class, but it is not reliable as much as previous case because in Arabic keyboard  we have some keys provide a shortcut to type two chars in one click (those keys  include: b, B, G and T).</p><p>Well, we try in this class to come over this issue by suppose that user used  optimum way by using shortcut keys when available instead of assemble chars using  stand alone keys, but if (s)he does not then you may have some typo chars in  converted text.</p><p>Example:  <ol><li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-inc">include</span><span class="src-sym">(</span><span class="src-str">'./I18N/Arabic.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+----------------------------------------------------------------------<br /><br /><p>Copyright (c) 2006-2013 Khaled Al-Sham'aa.</p><p>http://www.ar-php.org</p><p>PHP Version 5</p><p>----------------------------------------------------------------------</p><p>LICENSE</p><p>This program is open source product; you can redistribute it and/or  modify it under the terms of the GNU Lesser General Public License (LGPL)  as published by the Free Software Foundation; either version 3  of the License, or (at your option) any later version.</p><p>This program is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  GNU Lesser General Public License for more details.</p><p>You should have received a copy of the GNU Lesser General Public License  along with this program.  If not, see &lt;http://www.gnu.org/licenses/lgpl.txt&gt;.</p><p>----------------------------------------------------------------------</p><p>Class Name: Arabic Keyboard Swapping Language</p><p>Filename:   KeySwap.php</p><p>Original    Author(s): Khaled Al-Sham'aa &lt;khaled@ar-php.org&gt;</p><p>Purpose:    Convert keyboard language programmatically (English - Arabic)</p><p>----------------------------------------------------------------------</p><p>Arabic Keyboard Swapping Language</p><p>PHP class to convert keyboard language between English and Arabic  programmatically. This function can be helpful in dual language forms when  users miss change keyboard language while they are entering data.</p><p>If you wrote an Arabic sentence while your keyboard stays in English mode by  mistake, you will get a non-sense English text on your PC screen. In that case  you can use this class to make a kind of magic conversion to swap that odd text  by original Arabic sentence you meant when you type on your keyboard.</p><p>Please note that magic conversion in the opposite direction (if you type English  sentences while your keyboard stays in Arabic mode) is also available in this  class, but it is not reliable as much as previous case because in Arabic keyboard  we have some keys provide a shortcut to type two chars in one click (those keys  include: b, B, G and T).</p><p>Well, we try in this class to come over this issue by suppose that user used  optimum way by using shortcut keys when available instead of assemble chars using  stand alone keys, but if (s)he does not then you may have some typo chars in  converted text.</p><p>Example:  <ol><li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-inc">include</span><span class="src-sym">(</span><span class="src-str">'./I18N/Arabic.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
 <li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$obj&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../I18N_Arabic/I18N_Arabic.html">I18N_Arabic</a></span><span class="src-sym">(</span><span class="src-str">'KeySwap'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
 <li><div class="src-line">&nbsp;</div></li>
 <li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$str&nbsp;</span>=&nbsp;<span class="src-str">&quot;Hpf&nbsp;lk&nbsp;hgkhs&nbsp;hglj'vtdkK&nbsp;Hpf&nbsp;hg`dk&nbsp;dldg,k&nbsp;f;gdjil&nbsp;Ygn&nbsp;,p]hkdm&nbsp;...&quot;</span><span class="src-sym">;</span></div></li>
@@ -144,7 +144,7 @@ Source Location: /Arabic/KeySwap.php<br /><br />
     <td><b>author:</b>&nbsp;&nbsp;</td><td>Khaled Al-Sham'aa &lt;<a href="mailto:khaled@ar-php.org">khaled@ar-php.org</a>&gt;</td>
   </tr>
   <tr>
-    <td><b>copyright:</b>&nbsp;&nbsp;</td><td>2006-2012 Khaled Al-Sham'aa</td>
+    <td><b>copyright:</b>&nbsp;&nbsp;</td><td>2006-2013 Khaled Al-Sham'aa</td>
   </tr>
   <tr>
     <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://www.ar-php.org">http://www.ar-php.org</a></td>
@@ -164,7 +164,7 @@ Source Location: /Arabic/KeySwap.php<br /><br />
 
         <div class="credit">
 		    <hr />
-		    Documentation generated on Tue, 17 Jan 2012 09:18:17 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.0</a>
+		    Documentation generated on Mon, 14 Jan 2013 17:48:50 +0100 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.0</a>
 	      </div>
       </td></tr></table>
     </td>

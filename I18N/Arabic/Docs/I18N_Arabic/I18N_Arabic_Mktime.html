@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>Docs For Class I18N_Arabic_Mktime</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../media/style.css">
 </head>
 <body>
@@ -26,7 +27,6 @@
   <tr valign="top">
     <td width="200" class="menu">
 	<div id="ric">
-					<p><a href="../ric_1-Install.html">1-Install</a></p>
 					<p><a href="../ric_Changes.html">Changes</a></p>
 					<p><a href="../ric_GPL.html">GPL</a></p>
 					<p><a href="../ric_LGPL.html">LGPL</a></p>
@@ -136,7 +136,7 @@ Source Location: /Arabic/Mktime.php<br /><br />
 
 <h4>Copyright:</h4>
 <ul>
-  <li>2006-2012 Khaled Al-Sham'aa</li>
+  <li>2006-2013 Khaled Al-Sham'aa</li>
 </ul>
         
 </td>
@@ -147,6 +147,7 @@ Source Location: /Arabic/Mktime.php<br /><br />
 <h3><a href="#class_methods">Methods</a></h3>
 <ul>
     <li><a href="../I18N_Arabic/I18N_Arabic_Mktime.html#methodconvertDate">convertDate</a></li>
+    <li><a href="../I18N_Arabic/I18N_Arabic_Mktime.html#methodhijriMonthDays">hijriMonthDays</a></li>
     <li><a href="../I18N_Arabic/I18N_Arabic_Mktime.html#methodislamicToJd">islamicToJd</a></li>
     <li><a href="../I18N_Arabic/I18N_Arabic_Mktime.html#methodjdToGreg">jdToGreg</a></li>
     <li><a href="../I18N_Arabic/I18N_Arabic_Mktime.html#methodmktime">mktime</a></li>
@@ -179,7 +180,7 @@ This PHP class is an Arabic customization for PHP mktime function<br /><br /><br
     <td><b>author:</b>&nbsp;&nbsp;</td><td>Khaled Al-Sham'aa &lt;<a href="mailto:khaled@ar-php.org">khaled@ar-php.org</a>&gt;</td>
   </tr>
   <tr>
-    <td><b>copyright:</b>&nbsp;&nbsp;</td><td>2006-2012 Khaled Al-Sham'aa</td>
+    <td><b>copyright:</b>&nbsp;&nbsp;</td><td>2006-2013 Khaled Al-Sham'aa</td>
   </tr>
   <tr>
     <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://www.ar-php.org">http://www.ar-php.org</a></td>
@@ -200,7 +201,7 @@ This PHP class is an Arabic customization for PHP mktime function<br /><br /><br
 
   <hr />
 	<a name="methodconvertDate"></a>
-	<h3>method convertDate <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__ArabicMktime.php.html#a183">183</a>]</span></h3>
+	<h3>method convertDate <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__ArabicMktime.php.html#a181">181</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -253,8 +254,62 @@ $D)</code>
         <div class="top">[ <a href="#top">Top</a> ]</div>
   </div>
   <hr />
+	<a name="methodhijriMonthDays"></a>
+	<h3>method hijriMonthDays <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__ArabicMktime.php.html#a302">302</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>integer hijriMonthDays(
+integer
+$m, integer
+$y, [boolean
+$umAlqoura = true])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Calculate how many days in a given Hijri month<br /><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>return:</b>&nbsp;&nbsp;</td><td>Days in a given Hijri month</td>
+  </tr>
+  <tr>
+    <td><b>author:</b>&nbsp;&nbsp;</td><td>Khaled Al-Sham'aa &lt;<a href="mailto:khaled@ar-php.org">khaled@ar-php.org</a>&gt;</td>
+  </tr>
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>public</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">integer&nbsp;&nbsp;</td>
+        <td><b>$m</b>&nbsp;&nbsp;</td>
+        <td>Hijri month (Islamic calendar)</td>
+      </tr>
+          <tr>
+        <td class="type">integer&nbsp;&nbsp;</td>
+        <td><b>$y</b>&nbsp;&nbsp;</td>
+        <td>Hijri year  (Islamic calendar), valid                            range[1320-1459]</td>
+      </tr>
+          <tr>
+        <td class="type">boolean&nbsp;&nbsp;</td>
+        <td><b>$umAlqoura</b>&nbsp;&nbsp;</td>
+        <td>Should we implement Um-Al-Qura calendar correction                            in this calculation (default value is true)</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
 	<a name="methodislamicToJd"></a>
-	<h3>method islamicToJd <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__ArabicMktime.php.html#a210">210</a>]</span></h3>
+	<h3>method islamicToJd <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__ArabicMktime.php.html#a204">204</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -308,7 +363,7 @@ $day)</code>
   </div>
   <hr />
 	<a name="methodjdToGreg"></a>
-	<h3>method jdToGreg <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__ArabicMktime.php.html#a226">226</a>]</span></h3>
+	<h3>method jdToGreg <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__ArabicMktime.php.html#a219">219</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -350,7 +405,7 @@ $julian)</code>
   </div>
   <hr />
 	<a name="methodmktime"></a>
-	<h3>method mktime <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__ArabicMktime.php.html#a161">161</a>]</span></h3>
+	<h3>method mktime <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__ArabicMktime.php.html#a159">159</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -428,7 +483,7 @@ $correction = 0])</code>
   </div>
   <hr />
 	<a name="methodmktimeCorrection"></a>
-	<h3>method mktimeCorrection <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__ArabicMktime.php.html#a263">263</a>]</span></h3>
+	<h3>method mktimeCorrection <span class="smalllinenumber">[line <a href="../__filesource/fsource_I18N_Arabic__ArabicMktime.php.html#a267">267</a>]</span></h3>
 	<div class="function">
     <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
     <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
@@ -468,7 +523,7 @@ $y)</code>
           <tr>
         <td class="type">integer&nbsp;&nbsp;</td>
         <td><b>$y</b>&nbsp;&nbsp;</td>
-        <td>Hijri year  (Islamic calendar)</td>
+        <td>Hijri year  (Islamic calendar), valid range [1420-1459]</td>
       </tr>
         </table>
     </div><br />
@@ -479,7 +534,7 @@ $y)</code>
 
         <div class="credit">
 		    <hr />
-		    Documentation generated on Tue, 17 Jan 2012 09:18:18 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.0</a>
+		    Documentation generated on Mon, 14 Jan 2013 17:48:52 +0100 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.0</a>
 	      </div>
       </td></tr></table>
     </td>

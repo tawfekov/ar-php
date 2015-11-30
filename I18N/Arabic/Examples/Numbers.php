@@ -18,7 +18,7 @@
  * @category  I18N
  * @package   I18N_Arabic
  * @author    Khaled Al-Sham'aa <khaled@ar-php.org>
- * @copyright 2006-2011 Khaled Al-Sham'aa
+ * @copyright 2006-2013 Khaled Al-Sham'aa
  *
  * @license   LGPL <http://www.gnu.org/licenses/lgpl.txt>
  * @link      http://www.ar-php.org
@@ -139,12 +139,14 @@ highlight_string($code);
 </div><br />
 
 <div class="Paragraph" dir="rtl">
-<h2 dir="ltr">Example Output 4: الأرقام الهندية</h2>
+<h2 dir="ltr">Example Output 4: العملات العربية</h2>
 <?php
-    $integer = '1975/8/2 9:43 صباحا';
-    $text    = $Arabic->int2indic($integer);
+    $Arabic->setFeminine(1);
+
+    $number = 24.7;
+    $text   = $Arabic->money2str($number, 'KWD', 'ar');
     
-    echo "<p dir=ltr align=center>$integer<br />$text</p>";
+    echo "<p dir=ltr align=center>$number<br />$text</p>";
 ?>
 
 </div><br />
@@ -156,10 +158,10 @@ $code = <<< END
     require '../../Arabic.php';
     \$Arabic = new I18N_Arabic('Numbers');
     
-    \$integer = '1975/8/2 9:43 صباحا';
-    \$text    = \$Arabic->int2indic(\$integer);
+    \$number = 24.7;
+    \$text   = \$Arabic->money2str(\$number, 'KWD', 'ar');
     
-    echo "<p dir=ltr align=center>\$integer<br />\$text</p>";
+    echo "<p dir=ltr align=center>\$number<br />\$text</p>";
 END;
 
 highlight_string($code);
@@ -168,7 +170,36 @@ highlight_string($code);
 </div><br />
 
 <div class="Paragraph" dir="rtl">
-<h2 dir="ltr">Example Output 5: ترتيب لمعدود مؤنث منصوب أو مجرور</h2>
+<h2 dir="ltr">Example Output 5: الأرقام الهندية</h2>
+<?php
+    $text1 = '1975/8/2 9:43 صباحا';
+    $text2 = $Arabic->int2indic($text1);
+    
+    echo "<p dir=ltr align=center>$text1<br />$text2</p>";
+?>
+
+</div><br />
+<div class="Paragraph">
+<h2>Example Code 5:</h2>
+<?php
+$code = <<< END
+<?php
+    require '../../Arabic.php';
+    \$Arabic = new I18N_Arabic('Numbers');
+    
+    \$text1 = '1975/8/2 9:43 صباحا';
+    \$text2 = \$Arabic->int2indic(\$text1);
+    
+    echo "<p dir=ltr align=center>\$text1<br />\$text2</p>";
+END;
+
+highlight_string($code);
+
+?>
+</div><br />
+
+<div class="Paragraph" dir="rtl">
+<h2 dir="ltr">Example Output 6: ترتيب لمعدود مؤنث منصوب أو مجرور</h2>
 <?php
     $Arabic->setFeminine(2);
     $Arabic->setFormat(2);
@@ -183,7 +214,7 @@ highlight_string($code);
 
 </div><br />
 <div class="Paragraph">
-<h2>Example Code 5:</h2>
+<h2>Example Code 6:</h2>
 <?php
 $code = <<< END
 <?php
@@ -199,6 +230,37 @@ $code = <<< END
     \$text = \$Arabic->int2str(\$integer);
     
     echo "<p dir=ltr align=center>\$integer<br />\$text</p>";
+END;
+
+highlight_string($code);
+
+?>
+</div><br />
+
+<div class="Paragraph" dir="rtl">
+<h2 dir="ltr">Example Output 7: تحويل الرقم المكتوب إلى عدد صحيح من جديد</h2>
+<?php
+    $string  = 'مليار و مئتين و خمسة و ستين مليون و ثلاثمئة و ثمانية و خمسين ألف و تسعمئة و تسعة و سبعين';
+
+    $integer = $Arabic->str2int($string);
+    
+    echo "<p dir=ltr align=center>$string<br />$integer</p>";
+?>
+
+</div><br />
+<div class="Paragraph">
+<h2>Example Code 7:</h2>
+<?php
+$code = <<< END
+<?php
+    require '../../Arabic.php';
+    \$Arabic = new I18N_Arabic('Numbers');
+    
+    \$string  = 'مليار و مئتين و خمسة و ستين مليون و ثلاثمئة و ثمانية و خمسين ألف و تسعمئة و تسعة و سبعين';
+
+    \$integer = \$Arabic->str2int(\$string);
+    
+    echo "<p dir=ltr align=center>\$string<br />\$integer</p>";
 END;
 
 highlight_string($code);

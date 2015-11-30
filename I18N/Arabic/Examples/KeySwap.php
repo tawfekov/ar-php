@@ -18,7 +18,7 @@
  * @category  I18N
  * @package   I18N_Arabic
  * @author    Khaled Al-Sham'aa <khaled@ar-php.org>
- * @copyright 2006-2011 Khaled Al-Sham'aa
+ * @copyright 2006-2013 Khaled Al-Sham'aa
  *
  * @license   LGPL <http://www.gnu.org/licenses/lgpl.txt>
  * @link      http://www.ar-php.org
@@ -63,7 +63,6 @@ highlight_string($code);
 <h2 dir="ltr">Example Output 2:</h2>
 <?php
     $str = "ِىغ هىفثممهلثىف بخخم ؤشى ةشنث فاهىلس لاهللثق ةخقث ؤخةحمثء شىي ةخقث رهخمثىفز ÷ف فشنثس ش فخعؤا خب لثىهعس شىي ش مخف خب ؤخعقشلث فخ ةخرث هى فاث خححخسهفث يهقثؤفهخىز";
-    
     echo "<u><i>Before:</i></u><br />$str<br /><br />";
     
     $text = $Arabic->swapAe($str);

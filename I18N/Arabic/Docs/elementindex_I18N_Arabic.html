@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>Package I18N_Arabic Element Index</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="media/style.css">
 </head>
 <body>
@@ -26,7 +27,6 @@
   <tr valign="top">
     <td width="200" class="menu">
 	<div id="ric">
-					<p><a href="ric_1-Install.html">1-Install</a></p>
 					<p><a href="ric_Changes.html">Changes</a></p>
 					<p><a href="ric_GPL.html">GPL</a></p>
 					<p><a href="ric_LGPL.html">LGPL</a></p>
@@ -335,14 +335,16 @@
 				<dd>in file Query.php, method <a href="I18N_Arabic/I18N_Arabic_Query.html#methodgetMode">I18N_Arabic_Query::getMode()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Getting $mode propority value that refer to search mode  [0 for OR logic | 1 for AND logic]</dd>
 							<dt><b>getMode</b></dt>
 				<dd>in file Date.php, method <a href="I18N_Arabic/I18N_Arabic_Date.html#methodgetMode">I18N_Arabic_Date::getMode()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Getting $mode value that refer to output mode format</dd>
+							<dt><b>getOrder</b></dt>
+				<dd>in file Numbers.php, method <a href="I18N_Arabic/I18N_Arabic_Numbers.html#methodgetOrder">I18N_Arabic_Numbers::getOrder()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Get the ordering flag value</dd>
 							<dt><b>getOrderBy</b></dt>
 				<dd>in file Query.php, method <a href="I18N_Arabic/I18N_Arabic_Query.html#methodgetOrderBy">I18N_Arabic_Query::getOrderBy()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Get more relevant order by section related to the user search keywords</dd>
 							<dt><b>getOutputCharset</b></dt>
 				<dd>in file Arabic.php, method <a href="I18N_Arabic/I18N_Arabic.html#methodgetOutputCharset">I18N_Arabic::getOutputCharset()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Get the charset used in the output Arabic strings</dd>
 							<dt><b>getPrayTime</b></dt>
-				<dd>in file Salat.php, method <a href="I18N_Arabic/I18N_Arabic_Salat.html#methodgetPrayTime">I18N_Arabic_Salat::getPrayTime()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Calculate Salat times for the date set in setSalatDate methode, and  location set in setSalatLocation.</dd>
+				<dd>in file Salat.php, method <a href="I18N_Arabic/I18N_Arabic_Salat.html#methodgetPrayTime">I18N_Arabic_Salat::getPrayTime()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Alias for getPrayTime2 method</dd>
 							<dt><b>getPrayTime2</b></dt>
-				<dd>in file Salat.php, method <a href="I18N_Arabic/I18N_Arabic_Salat.html#methodgetPrayTime2">I18N_Arabic_Salat::getPrayTime2()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Another algorithm (more accurate) to calculate Salat times for the date  set in setSalatDate methode, and location set in setSalatLocation.</dd>
+				<dd>in file Salat.php, method <a href="I18N_Arabic/I18N_Arabic_Salat.html#methodgetPrayTime2">I18N_Arabic_Salat::getPrayTime2()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Calculate Salat times for the date set in setSalatDate methode, and  location set in setSalatLocation.</dd>
 							<dt><b>getQibla</b></dt>
 				<dd>in file Salat.php, method <a href="I18N_Arabic/I18N_Arabic_Salat.html#methodgetQibla">I18N_Arabic_Salat::getQibla()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Determine Qibla direction using basic spherical trigonometric formula</dd>
 							<dt><b>getStrFields</b></dt>
@@ -381,6 +383,8 @@
 				<dd>in file AutoSummarize.php, method <a href="I18N_Arabic/I18N_Arabic_AutoSummarize.html#methodhighlightSummary">I18N_Arabic_AutoSummarize::highlightSummary()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Highlight key sentences (summary) of the input string (document content)  using CSS and send the result back as an output</dd>
 							<dt><b>highlightText</b></dt>
 				<dd>in file WordTag.php, method <a href="I18N_Arabic/I18N_Arabic_WordTag.html#methodhighlightText">I18N_Arabic_WordTag::highlightText()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Highlighted all nouns in a given Arabic string</dd>
+							<dt><b>hijriMonthDays</b></dt>
+				<dd>in file Mktime.php, method <a href="I18N_Arabic/I18N_Arabic_Mktime.html#methodhijriMonthDays">I18N_Arabic_Mktime::hijriMonthDays()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Calculate how many days in a given Hijri month</dd>
 							<dt><b>hjConvert</b></dt>
 				<dd>in file Date.php, method <a href="I18N_Arabic/I18N_Arabic_Date.html#methodhjConvert">I18N_Arabic_Date::hjConvert()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Convert given Gregorian date into Hijri date</dd>
 							<dt><b>html2iso</b></dt>
@@ -450,13 +454,15 @@
 							<dt><b>int2str</b></dt>
 				<dd>in file Numbers.php, method <a href="I18N_Arabic/I18N_Arabic_Numbers.html#methodint2str">I18N_Arabic_Numbers::int2str()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Spell integer number in Arabic idiom</dd>
 							<dt><b>isAlef</b></dt>
-				<dd>in file Normalise.php, method <a href="I18N_Arabic/I18N_Arabic_Normalise.html#methodisAlef">I18N_Arabic_Normalise::isAlef()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Checks for Arabic Alef forms (i.e. ALEF, ALEF MADDA, ALEF HAMZA ABOVE, ALEF HAMZA BELOW,ALEF WASLA, ALEF MAKSURA).</dd>
+				<dd>in file Normalise.php, method <a href="I18N_Arabic/I18N_Arabic_Normalise.html#methodisAlef">I18N_Arabic_Normalise::isAlef()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Checks for Arabic Alef forms (i.e. ALEF, ALEF MADDA, ALEF HAMZA ABOVE,  ALEF HAMZA BELOW,ALEF WASLA, ALEF MAKSURA).</dd>
 							<dt><b>isArabic</b></dt>
 				<dd>in file Identifier.php, method <a href="I18N_Arabic/I18N_Arabic_Identifier.html#methodisArabic">I18N_Arabic_Identifier::isArabic()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Find out if given string is Arabic text or not</dd>
 							<dt><b>isFemale</b></dt>
 				<dd>in file Gender.php, method <a href="I18N_Arabic/I18N_Arabic_Gender.html#methodisFemale">I18N_Arabic_Gender::isFemale()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Check if Arabic word is feminine</dd>
+							<dt><b>isForum</b></dt>
+				<dd>in file Arabic.php, method <a href="I18N_Arabic/I18N_Arabic.html#methodisForum">I18N_Arabic::isForum()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;There is still a lack of original, localized, high-quality content and  well-structured Arabic websites; This method help in tag HTML result pages  from Arabic forum to enable filter it in/out.</dd>
 							<dt><b>isHamza</b></dt>
-				<dd>in file Normalise.php, method <a href="I18N_Arabic/I18N_Arabic_Normalise.html#methodisHamza">I18N_Arabic_Normalise::isHamza()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Checks for Arabic Hamza forms (i.e. HAMZA, WAW HAMZA, YEH HAMZA, HAMZA ABOVE, HAMZA BELOW, ALEF HAMZA BELOW, ALEF HAMZA ABOVE).</dd>
+				<dd>in file Normalise.php, method <a href="I18N_Arabic/I18N_Arabic_Normalise.html#methodisHamza">I18N_Arabic_Normalise::isHamza()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Checks for Arabic Hamza forms (i.e. HAMZA, WAW HAMZA, YEH HAMZA, HAMZA ABOVE,  HAMZA BELOW, ALEF HAMZA BELOW, ALEF HAMZA ABOVE).</dd>
 							<dt><b>isHaraka</b></dt>
 				<dd>in file Normalise.php, method <a href="I18N_Arabic/I18N_Arabic_Normalise.html#methodisHaraka">I18N_Arabic_Normalise::isHaraka()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Checks for Arabic Harakat marks (i.e. FATHA, DAMMA, KASRA, SUKUN, TANWIN).</dd>
 							<dt><b>islamicToJd</b></dt>
@@ -464,11 +470,13 @@
 							<dt><b>islamicToJd</b></dt>
 				<dd>in file Mktime.php, method <a href="I18N_Arabic/I18N_Arabic_Mktime.html#methodislamicToJd">I18N_Arabic_Mktime::islamicToJd()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;This will convert given Hijri date (Islamic calendar) into Julian day</dd>
 							<dt><b>isLigature</b></dt>
-				<dd>in file Normalise.php, method <a href="I18N_Arabic/I18N_Arabic_Normalise.html#methodisLigature">I18N_Arabic_Normalise::isLigature()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Checks for Arabic Ligatures like LamAlef (i.e. LAM ALEF, LAM ALEF HAMZA ABOVE, LAM ALEF HAMZA BELOW, LAM ALEF MADDA ABOVE).</dd>
+				<dd>in file Normalise.php, method <a href="I18N_Arabic/I18N_Arabic_Normalise.html#methodisLigature">I18N_Arabic_Normalise::isLigature()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Checks for Arabic Ligatures like LamAlef (i.e. LAM ALEF, LAM ALEF HAMZA  ABOVE, LAM ALEF HAMZA BELOW, LAM ALEF MADDA ABOVE).</dd>
 							<dt><b>isMoon</b></dt>
 				<dd>in file Normalise.php, method <a href="I18N_Arabic/I18N_Arabic_Normalise.html#methodisMoon">I18N_Arabic_Normalise::isMoon()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Checks for Arabic Moon letters.</dd>
 							<dt><b>isNoun</b></dt>
 				<dd>in file WordTag.php, method <a href="I18N_Arabic/I18N_Arabic_WordTag.html#methodisNoun">I18N_Arabic_WordTag::isNoun()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Check if given rabic word is noun or not</dd>
+							<dt><b>iso2html</b></dt>
+				<dd>in file CharsetC.php, method <a href="I18N_Arabic/I18N_Arabic_CharsetC.html#methodiso2html">I18N_Arabic_CharsetC::iso2html()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Convert Arabic string from ISO-8859-6 to HTML entities format</dd>
 							<dt><b>iso2utf</b></dt>
 				<dd>in file CharsetC.php, method <a href="I18N_Arabic/I18N_Arabic_CharsetC.html#methodiso2utf">I18N_Arabic_CharsetC::iso2utf()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Convert Arabic string from ISO-8859-6 to UTF-8 format</dd>
 							<dt><b>iso2win</b></dt>
@@ -482,7 +490,7 @@
 							<dt><b>isTanwin</b></dt>
 				<dd>in file Normalise.php, method <a href="I18N_Arabic/I18N_Arabic_Normalise.html#methodisTanwin">I18N_Arabic_Normalise::isTanwin()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Checks for Arabic Tanwin marks (i.e. FATHATAN, DAMMATAN, KASRATAN).</dd>
 							<dt><b>isTashkeel</b></dt>
-				<dd>in file Normalise.php, method <a href="I18N_Arabic/I18N_Arabic_Normalise.html#methodisTashkeel">I18N_Arabic_Normalise::isTashkeel()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Checks for Arabic Tashkeel marks (i.e. FATHA, DAMMA, KASRA, SUKUN, SHADDA, FATHATAN, DAMMATAN, KASRATAN).</dd>
+				<dd>in file Normalise.php, method <a href="I18N_Arabic/I18N_Arabic_Normalise.html#methodisTashkeel">I18N_Arabic_Normalise::isTashkeel()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Checks for Arabic Tashkeel marks (i.e. FATHA, DAMMA, KASRA, SUKUN,  SHADDA, FATHATAN, DAMMATAN, KASRATAN).</dd>
 							<dt><b>isTehlike</b></dt>
 				<dd>in file Normalise.php, method <a href="I18N_Arabic/I18N_Arabic_Normalise.html#methodisTehlike">I18N_Arabic_Normalise::isTehlike()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Checks for Arabic Teh forms (i.e. TEH, TEH MARBUTA).</dd>
 							<dt><b>isWawlike</b></dt>
@@ -547,6 +555,8 @@
 				<dd>in file Mktime.php, method <a href="I18N_Arabic/I18N_Arabic_Mktime.html#methodmktime">I18N_Arabic_Mktime::mktime()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;This will return current Unix timestamp  for given Hijri date (Islamic calendar)</dd>
 							<dt><b>mktimeCorrection</b></dt>
 				<dd>in file Mktime.php, method <a href="I18N_Arabic/I18N_Arabic_Mktime.html#methodmktimeCorrection">I18N_Arabic_Mktime::mktimeCorrection()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Calculate Hijri calendar correction using Um-Al-Qura calendar information</dd>
+							<dt><b>money2str</b></dt>
+				<dd>in file Numbers.php, method <a href="I18N_Arabic/I18N_Arabic_Numbers.html#methodmoney2str">I18N_Arabic_Numbers::money2str()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Spell number in Arabic idiom as money</dd>
 							<dt><b>myErrorHandler</b></dt>
 				<dd>in file Arabic.php, method <a href="I18N_Arabic/I18N_Arabic.html#methodmyErrorHandler">I18N_Arabic::myErrorHandler()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Error handler function</dd>
 					</dl>
@@ -577,8 +587,6 @@
 		<dl>
 							<dt><b>preConvert</b></dt>
 				<dd>in file Glyphs.php, method <a href="I18N_Arabic/I18N_Arabic_Glyphs.html#methodpreConvert">I18N_Arabic_Glyphs::preConvert()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Convert Arabic Windows-1256 charset string into glyph joining in UTF-8  hexadecimals stream</dd>
-							<dt><b>pregPattern</b></dt>
-				<dd>in file Arabic.php, method <a href="I18N_Arabic/I18N_Arabic.html#methodpregPattern">I18N_Arabic::pregPattern()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Renders regular expression pattern using an enhanced version of syntax and semantics  to support arabic version of some specifying generic character types</dd>
 					</dl>
 	</div>
 	<a href="elementindex_I18N_Arabic.html#top">top</a><br>
@@ -651,6 +659,8 @@
 				<dd>in file Date.php, method <a href="I18N_Arabic/I18N_Arabic_Date.html#methodsetMode">I18N_Arabic_Date::setMode()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Setting value for $mode scalar</dd>
 							<dt><b>setMode</b></dt>
 				<dd>in file Query.php, method <a href="I18N_Arabic/I18N_Arabic_Query.html#methodsetMode">I18N_Arabic_Query::setMode()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Setting $mode propority value that refer to search mode  [0 for OR logic | 1 for AND logic]</dd>
+							<dt><b>setOrder</b></dt>
+				<dd>in file Numbers.php, method <a href="I18N_Arabic/I18N_Arabic_Numbers.html#methodsetOrder">I18N_Arabic_Numbers::setOrder()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Set the ordering flag, is it normal number or ordering number</dd>
 							<dt><b>setOutputCharset</b></dt>
 				<dd>in file Arabic.php, method <a href="I18N_Arabic/I18N_Arabic.html#methodsetOutputCharset">I18N_Arabic::setOutputCharset()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Set charset used in class output Arabic strings</dd>
 							<dt><b>setStrFields</b></dt>
@@ -667,6 +677,8 @@
 				<dd>in file CompressStr.php, method <a href="I18N_Arabic/I18N_Arabic_CompressStr.html#methodstr2bits">I18N_Arabic_CompressStr::str2bits()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Convert textual string into binary string</dd>
 							<dt><b>str2graph</b></dt>
 				<dd>in file Hiero.php, method <a href="I18N_Arabic/I18N_Arabic_Hiero.html#methodstr2graph">I18N_Arabic_Hiero::str2graph()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Translate Arabic or English word into Hieroglyphics</dd>
+							<dt><b>str2int</b></dt>
+				<dd>in file Numbers.php, method <a href="I18N_Arabic/I18N_Arabic_Numbers.html#methodstr2int">I18N_Arabic_Numbers::str2int()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Convert Arabic idiom number string into Integer</dd>
 							<dt><b>stripTashkeel</b></dt>
 				<dd>in file Normalise.php, method <a href="I18N_Arabic/I18N_Arabic_Normalise.html#methodstripTashkeel">I18N_Arabic_Normalise::stripTashkeel()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Strip all tashkeel characters from an Arabic text.</dd>
 							<dt><b>stripTatweel</b></dt>
@@ -707,6 +719,8 @@
 				<dd>in file Normalise.php, method <a href="I18N_Arabic/I18N_Arabic_Normalise.html#methodunichr">I18N_Arabic_Normalise::unichr()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Return unicode char by its code point.</dd>
 							<dt><b>unshape</b></dt>
 				<dd>in file Normalise.php, method <a href="I18N_Arabic/I18N_Arabic_Normalise.html#methodunshape">I18N_Arabic_Normalise::unshape()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Takes Arabic text in its joined form, it untangles the characters  and  unshapes them.</dd>
+							<dt><b>utf2html</b></dt>
+				<dd>in file CharsetC.php, method <a href="I18N_Arabic/I18N_Arabic_CharsetC.html#methodutf2html">I18N_Arabic_CharsetC::utf2html()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Convert Arabic string from UTF-8 to HTML entities format</dd>
 							<dt><b>utf2iso</b></dt>
 				<dd>in file CharsetC.php, method <a href="I18N_Arabic/I18N_Arabic_CharsetC.html#methodutf2iso">I18N_Arabic_CharsetC::utf2iso()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Convert Arabic string from UTF-8 to ISO-8859-6 format</dd>
 							<dt><b>utf2win</b></dt>
@@ -738,7 +752,7 @@
 	<a href="elementindex_I18N_Arabic.html#top">top</a><br>
         <div class="credit">
 		    <hr />
-		    Documentation generated on Tue, 17 Jan 2012 09:18:04 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.0</a>
+		    Documentation generated on Mon, 14 Jan 2013 17:48:31 +0100 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.0</a>
 	      </div>
       </td></tr></table>
     </td>

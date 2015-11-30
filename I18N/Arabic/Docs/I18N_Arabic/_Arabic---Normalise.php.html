@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>Docs for page Normalise.php</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../media/style.css">
 </head>
 <body>
@@ -26,7 +27,6 @@
   <tr valign="top">
     <td width="200" class="menu">
 	<div id="ric">
-					<p><a href="../ric_1-Install.html">1-Install</a></p>
 					<p><a href="../ric_Changes.html">Changes</a></p>
 					<p><a href="../ric_GPL.html">GPL</a></p>
 					<p><a href="../ric_LGPL.html">LGPL</a></p>
@@ -126,7 +126,7 @@ Source Location: /Arabic/Normalise.php<br /><br />
 </div><br /><br />
 
 <h2>Page Details:</h2>
-----------------------------------------------------------------------<br /><br /><p>Copyright (c) 2006-2012 Khaled Al-Sham'aa.</p><p>http://www.ar-php.org</p><p>PHP Version 5</p><p>----------------------------------------------------------------------</p><p>LICENSE</p><p>This program is open source product; you can redistribute it and/or  modify it under the terms of the GNU Lesser General Public License (LGPL)  as published by the Free Software Foundation; either version 3  of the License, or (at your option) any later version.</p><p>This program is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  GNU Lesser General Public License for more details.</p><p>You should have received a copy of the GNU Lesser General Public License  along with this program.  If not, see &lt;http://www.gnu.org/licenses/lgpl.txt&gt;.</p><p>----------------------------------------------------------------------</p><p>Class Name: Functions to normalise Arabic text.</p><p>Filename:   Normalise.php</p><p>Original    Author(s): Khaled Al-Sham'aa &lt;khaled@ar-php.org&gt;</p><p>Purpose:   Text normalisation through various stages. Also: unshaping.</p><p>----------------------------------------------------------------------</p><p>This class provides various functions to manipulate arabic text and   normalise it by applying filters, for example, to strip tatweel and   tashkeel, to normalise hamza and lamalephs, and to unshape   a joined Arabic text back into its normalised form.</p><p>There is also a function to reverse a utf8 string.</p><p>The functions are helpful for searching, indexing and similar   functions.</p><p>Note that this class can only deal with UTF8 strings. You can use functions  from the other classes to convert between encodings if necessary.</p><p>Example:  <ol><li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-inc">include</span><span class="src-sym">(</span><span class="src-str">'./I18N/Arabic.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+----------------------------------------------------------------------<br /><br /><p>Copyright (c) 2006-2013 Khaled Al-Sham'aa.</p><p>http://www.ar-php.org</p><p>PHP Version 5</p><p>----------------------------------------------------------------------</p><p>LICENSE</p><p>This program is open source product; you can redistribute it and/or  modify it under the terms of the GNU Lesser General Public License (LGPL)  as published by the Free Software Foundation; either version 3  of the License, or (at your option) any later version.</p><p>This program is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  GNU Lesser General Public License for more details.</p><p>You should have received a copy of the GNU Lesser General Public License  along with this program.  If not, see &lt;http://www.gnu.org/licenses/lgpl.txt&gt;.</p><p>----------------------------------------------------------------------</p><p>Class Name: Functions to normalise Arabic text.</p><p>Filename:   Normalise.php</p><p>Original    Author(s): Khaled Al-Sham'aa &lt;khaled@ar-php.org&gt;</p><p>Purpose:   Text normalisation through various stages. Also: unshaping.</p><p>----------------------------------------------------------------------</p><p>This class provides various functions to manipulate arabic text and   normalise it by applying filters, for example, to strip tatweel and   tashkeel, to normalise hamza and lamalephs, and to unshape   a joined Arabic text back into its normalised form.</p><p>There is also a function to reverse a utf8 string.</p><p>The functions are helpful for searching, indexing and similar   functions.</p><p>Note that this class can only deal with UTF8 strings. You can use functions  from the other classes to convert between encodings if necessary.</p><p>Example:  <ol><li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-inc">include</span><span class="src-sym">(</span><span class="src-str">'./I18N/Arabic.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
 <li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$obj&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../I18N_Arabic/I18N_Arabic.html">I18N_Arabic</a></span><span class="src-sym">(</span><span class="src-str">'Normalise'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
 <li><div class="src-line">&nbsp;</div></li>
 <li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$str&nbsp;</span>=&nbsp;<span class="src-str">&quot;Arabic&nbsp;text&nbsp;with&nbsp;tatweel,&nbsp;tashkeel...&quot;</span><span class="src-sym">;</span></div></li>
@@ -144,7 +144,7 @@ Source Location: /Arabic/Normalise.php<br /><br />
     <td><b>author:</b>&nbsp;&nbsp;</td><td>Djihed Afifi &lt;<a href="mailto:djihed@gmail.com">djihed@gmail.com</a>&gt;</td>
   </tr>
   <tr>
-    <td><b>copyright:</b>&nbsp;&nbsp;</td><td>2006-2012 Khaled Al-Sham'aa</td>
+    <td><b>copyright:</b>&nbsp;&nbsp;</td><td>2006-2013 Khaled Al-Sham'aa</td>
   </tr>
   <tr>
     <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://www.ar-php.org">http://www.ar-php.org</a></td>
@@ -164,7 +164,7 @@ Source Location: /Arabic/Normalise.php<br /><br />
 
         <div class="credit">
 		    <hr />
-		    Documentation generated on Tue, 17 Jan 2012 09:18:18 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.0</a>
+		    Documentation generated on Mon, 14 Jan 2013 17:48:52 +0100 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.0</a>
 	      </div>
       </td></tr></table>
     </td>

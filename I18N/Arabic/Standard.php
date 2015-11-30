@@ -2,7 +2,7 @@
 /**
  * ----------------------------------------------------------------------
  *  
- * Copyright (c) 2006-2012 Khaled Al-Sham'aa.
+ * Copyright (c) 2006-2013 Khaled Al-Sham'aa.
  *  
  * http://www.ar-php.org
  *  
@@ -56,7 +56,7 @@
  * @category  I18N 
  * @package   I18N_Arabic
  * @author    Khaled Al-Sham'aa <khaled@ar-php.org>
- * @copyright 2006-2012 Khaled Al-Sham'aa
+ * @copyright 2006-2013 Khaled Al-Sham'aa
  *    
  * @license   LGPL <http://www.gnu.org/licenses/lgpl.txt>
  * @link      http://www.ar-php.org 
@@ -79,7 +79,7 @@
  * @category  I18N 
  * @package   I18N_Arabic
  * @author    Khaled Al-Sham'aa <khaled@ar-php.org>
- * @copyright 2006-2012 Khaled Al-Sham'aa
+ * @copyright 2006-2013 Khaled Al-Sham'aa
  *    
  * @license   LGPL <http://www.gnu.org/licenses/lgpl.txt>
  * @link      http://www.ar-php.org 
@@ -108,6 +108,9 @@ class I18N_Arabic_Standard
     {
         $patterns     = array();
         $replacements = array();
+        
+        array_push($patterns, '/\r\n/u', '/([^\@])\n([^\@])/u', '/\r/u');
+        array_push($replacements, "\n@@@\n", "\\1\n&&&\n\\2", "\n###\n");
         
         /**
          * النقطة، الفاصلة، الفاصلة المنقوطة،
@@ -179,6 +182,9 @@ class I18N_Arabic_Standard
          */
         array_push($patterns, '/\s+(\d+)\s*\%\s+/u');
         array_push($replacements, ' %\\1 ');
+        
+        array_push($patterns, '/\n?@@@\n?/u', '/\n?&&&\n?/u', '/\n?###\n?/u');
+        array_push($replacements, "\r\n", "\n", "\r");
 
         $text = preg_replace($patterns, $replacements, $text);
 

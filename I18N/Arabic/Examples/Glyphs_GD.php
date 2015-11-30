@@ -5,7 +5,7 @@
  * @category  I18N
  * @package   I18N_Arabic
  * @author    Khaled Al-Sham'aa <khaled@ar-php.org>
- * @copyright 2006-2011 Khaled Al-Sham'aa
+ * @copyright 2006-2013 Khaled Al-Sham'aa
  *
  * @license   LGPL <http://www.gnu.org/licenses/lgpl.txt>
  * @link      http://www.ar-php.org
@@ -38,7 +38,7 @@ imagettftext($im, 20, 0, 250, 50, $black, $font, $text);
 require '../../Arabic.php';
 $Arabic = new I18N_Arabic('Glyphs');
 
-$text = ' بسم الله الرحمن الرحيم';
+$text = 'بسم الله الرحمن الرحيم';
 $text = $Arabic->utf8Glyphs($text);
 
 imagettftext($im, 20, 0, 10, 100, $blue, $font, 'Arabic Glyphs:');

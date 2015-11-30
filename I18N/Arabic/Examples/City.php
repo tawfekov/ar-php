@@ -17,7 +17,7 @@
  * @category  I18N
  * @package   I18N_Arabic
  * @author    Khaled Al-Sham'aa <khaled@ar-php.org>
- * @copyright 2006-2011 Khaled Al-Sham'aa
+ * @copyright 2006-2013 Khaled Al-Sham'aa
  *
  * @license   LGPL <http://www.gnu.org/licenses/lgpl.txt>
  * @link      http://www.ar-php.org
@@ -25,7 +25,7 @@
 
 error_reporting(E_STRICT);
 $time_start = microtime(true);
-  
+
 try {
     /*** connect to SQLite database ***/
     $dbh = new PDO('sqlite:../data/cities.db');
@@ -44,11 +44,17 @@ try {
     $sth->execute();
     $result = $sth->fetch(PDO::FETCH_ASSOC);
 
-    echo $result['arabic'] . ' / ' . $result['english'] . '<br />';
+    echo $result['arabic'] . ' / ' . $result['english'] . '<br /><br />';
     if (!empty($result['latitude'])) {
         echo 'Latitude: ' . $result['latitude'];
         echo ', Longitude: ' . $result['longitude'];
+        echo '<br /><br />';
     }
+    
+    $left  = $result['left'];
+    $right = $result['right'];
+    $parent_id = $result['parent_id'];
+    echo "Celko Visitation Parameters (Parent ID=$parent_id, Left=$left, Right=$right)";
 
     echo '<br /><br /><select name="city" dir="rtl" onChange="document.frm.submit()">';
     echo '<option>- إختر رجاء -</option>';
@@ -81,9 +87,38 @@ try {
     // Close the databse connection
     $dbh = null; 
 } catch(PDOException $e) {
-    echo $e->getMessage();
+    if (!in_array('sqlite', PDO::getAvailableDrivers())) {
+        echo '<p align="center"><b><font color="red">Could not find SQLite driver in the available PDO drivers!</font></b>
+              For more information on how to install and activate SQLite PDO driver please check this 
+              <a href="http://php.net/manual/en/pdo.installation.php" target=_blank>page</a></p>';
+    } else {
+        echo $e->getMessage();
+    }
 }
 ?>
+
+<br /><h2>Some SQL example implements Celko visitation model features:</h2> 
+
+    <ul>
+        <li>
+            <b>Finding all the cities nodes in the selected region:</b><br />
+            <?php echo "SELECT * FROM city WHERE right-left=1 AND left>=$left AND right<=$right"; ?>
+            <br />&nbsp;
+        </li>
+        <li>
+            <b>Retrieving a single path (Country\Region\City):</b><br />
+            <?php echo "SELECT id FROM city WHERE left<=$left AND right>=$right ORDER BY left"; ?>
+            <br />&nbsp;
+        </li>
+        <li>
+            <b>Finding the depth of the nodes (1 is Country, 2 is Region, and 3 is City):</b><br />
+            <?php echo "SELECT COUNT(id) FROM city WHERE left<$left AND right>$right"; ?>
+            <br />&nbsp;
+        </li>
+    </ul>
+
+<a href="http://en.wikipedia.org/wiki/Nested_set_model" target=_blank>Reference</a>
+
 </div><br />
 
 <div class="Paragraph">

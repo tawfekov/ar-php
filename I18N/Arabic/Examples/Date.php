@@ -18,7 +18,7 @@
  * @category  I18N
  * @package   I18N_Arabic
  * @author    Khaled Al-Sham'aa <khaled@ar-php.org>
- * @copyright 2006-2011 Khaled Al-Sham'aa
+ * @copyright 2006-2013 Khaled Al-Sham'aa
  *
  * @license   LGPL <http://www.gnu.org/licenses/lgpl.txt>
  * @link      http://www.ar-php.org
@@ -27,7 +27,7 @@
 error_reporting(E_STRICT);
 $time_start = microtime(true);
 
-date_default_timezone_set('UTC');
+date_default_timezone_set('GMT');
 $time = time();
 
 echo date('l dS F Y h:i:s A', $time);
@@ -65,6 +65,7 @@ echo '<br /><br />';
 
 $Arabic->setMode(7);
 echo $Arabic->date('l dS F Y h:i:s A', $time);
+
 ?>
 </div><br />
 <div class="Paragraph">
@@ -72,7 +73,7 @@ echo $Arabic->date('l dS F Y h:i:s A', $time);
 <?php
 $code = <<< END
 <?php
-    date_default_timezone_set('UTC');
+    date_default_timezone_set('GMT');
     \$time = time();
 
     echo date('l dS F Y h:i:s A', \$time);
