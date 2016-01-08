@@ -210,7 +210,7 @@ class I18N_Arabic_Glyphs
         $output   = '';
         
         $_temp = mb_strlen($str);
-
+        $chars = array();
         for ($i = 0; $i < $_temp; $i++) {
             $chars[] = mb_substr($str, $i, 1);
         }
