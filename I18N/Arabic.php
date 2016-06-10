@@ -2,7 +2,7 @@
 /**
  * ----------------------------------------------------------------------
  *  
- * Copyright (c) 2006-2013 Khaled Al-Shamaa.
+ * Copyright (c) 2006-2016 Khaled Al-Shamaa.
  *  
  * http://www.ar-php.org
  *  
@@ -50,17 +50,12 @@
  * @category  I18N 
  * @package   I18N_Arabic
  * @author    Khaled Al-Shamaa <khaled@ar-php.org>
- * @copyright 2006-2013 Khaled Al-Shamaa
+ * @copyright 2006-2016 Khaled Al-Shamaa
  *    
  * @license   LGPL <http://www.gnu.org/licenses/lgpl.txt>
- * @version   3.6.0 released in Jan 20, 2013
+ * @version   4.0 released in Jan 8, 2016
  * @link      http://www.ar-php.org
  */
-
-// New in PHP V5.3: Namespaces
-// namespace I18N\Arabic;
-
-// error_reporting(E_STRICT);
 
 /**
  * Core PHP and Arabic language class
@@ -68,7 +63,7 @@
  * @category  I18N 
  * @package   I18N_Arabic
  * @author    Khaled Al-Shamaa <khaled@ar-php.org>
- * @copyright 2006-2013 Khaled Al-Shamaa
+ * @copyright 2006-2016 Khaled Al-Shamaa
  *    
  * @license   LGPL <http://www.gnu.org/licenses/lgpl.txt>
  * @link      http://www.ar-php.org
@@ -77,34 +72,11 @@ class I18N_Arabic
 {
     private $_inputCharset  = 'utf-8';
     private $_outputCharset = 'utf-8';
+    private $_compatible    = array();
+    private $_lazyLoading   = array();
     private $_useAutoload;
     private $_useException;
     private $_compatibleMode;
-    
-    private $_compatible = array('EnTransliteration'=>'Transliteration', 
-                                  'ArTransliteration'=>'Transliteration',
-                                  'ArAutoSummarize'=>'AutoSummarize',
-                                  'ArCharsetC'=>'CharsetC',
-                                  'ArCharsetD'=>'CharsetD',
-                                  'ArDate'=>'Date',
-                                  'ArGender'=>'Gender',
-                                  'ArGlyphs'=>'Glyphs',
-                                  'ArIdentifier'=>'Identifier',
-                                  'ArKeySwap'=>'KeySwap',
-                                  'ArNumbers'=>'Numbers',
-                                  'ArQuery'=>'Query',
-                                  'ArSoundex'=>'Soundex',
-                                  'ArStrToTime'=>'StrToTime',
-                                  'ArWordTag'=>'WordTag',
-                                  'ArCompressStr'=>'CompressStr',
-                                  'ArMktime'=>'Mktime',
-                                  'ArStemmer'=>'Stemmer',
-                                  'ArStandard'=>'Standard',
-                                  'ArNormalise'=>'Normalise',
-                                  'a4_max_chars'=>'a4MaxChars',
-                                  'a4_lines'=>'a4Lines',
-                                  'swap_ea'=>'swapEa',
-                                  'swap_ae'=>'swapAe');
     
     /**
      * @ignore
@@ -142,6 +114,16 @@ class I18N_Arabic
         $this->_useAutoload    = $useAutoload;
         $this->_useException   = $useException;
         $this->_compatibleMode = $compatibleMode;
+
+        $xml = simplexml_load_file(dirname(__FILE__).'/Arabic/data/config.xml');
+
+        foreach ($xml->xpath("//compatible/case") as $case) {
+            $this->_compatible["{$case['old']}"] = (string)$case;
+        }
+
+        foreach ($xml->xpath("//lazyLoading/case") as $case) {
+            $this->_lazyLoading["{$case['method']}"] = (string)$case;
+        } 
 
         /* Set internal character encoding to UTF-8 */
         mb_internal_encoding("utf-8");
@@ -232,7 +214,6 @@ class I18N_Arabic
         if ($this->_compatibleMode 
             && array_key_exists($library, $this->_compatible)
         ) {
-            
             $library = $this->_compatible[$library];
         }
 
@@ -268,8 +249,12 @@ class I18N_Arabic
         if ($this->_compatibleMode 
             && array_key_exists($methodName, $this->_compatible)
         ) {
-            
             $methodName = $this->_compatible[$methodName];
+        }
+
+        // setMode & getMode [Date*|Query], setLang [Soundex*|CompressStr]  
+        if ('I18N_Arabic_'.$this->_lazyLoading[$methodName] != $this->myClass) {
+            $this->load($this->_lazyLoading[$methodName]);
         }
 
         // Create an instance of the ReflectionMethod class
@@ -286,23 +271,29 @@ class I18N_Arabic
                 $value = $parameter->getDefaultValue();
             }
             
-            $params[$name] = $this->coreConvert(
-                $value, 
-                $this->getInputCharset(), 
-                'utf-8'
-            );
+            if ($methodName == 'decompress'
+                || ($methodName == 'search' && $name == 'bin')
+                || ($methodName == 'length' && $name == 'bin')
+            ) {
+                $params[$name] = $value;
+            } else {
+                $params[$name] = iconv($this->getInputCharset(), 'utf-8', $value);
+            }
         }
 
         $value = call_user_func_array(array(&$this->myObject, $methodName), $params);
 
         if ($methodName == 'tagText') {
+            $outputCharset = $this->getOutputCharset();
             foreach ($value as $key=>$text) {
-                $value[$key][0] = $this->coreConvert(
-                    $text[0], 'utf-8', $this->getOutputCharset()
-                );
+                $value[$key][0] = iconv('utf-8', $outputCharset, $text[0]);
             }
+        } elseif ($methodName == 'compress' 
+                  || $methodName == 'getPrayTime'
+                  || $methodName == 'str2graph'
+        ) {
         } else {
-            $value = $this->coreConvert($value, 'utf-8', $this->getOutputCharset());
+            $value = iconv('utf-8', $this->getOutputCharset(), $value);
         }
 
         return $value;
@@ -333,9 +324,13 @@ class I18N_Arabic
     {
         $flag = true;
         
-        $charset = strtolower($charset);
+        $charset  = strtolower($charset);
+        $charsets = array('utf-8', 'windows-1256', 'cp1256', 'iso-8859-6');
         
-        if (in_array($charset, array('utf-8', 'windows-1256', 'iso-8859-6'))) {
+        if (in_array($charset, $charsets)) {
+            if ($charset == 'windows-1256') {
+                $charset = 'cp1256';
+            }
             $this->_inputCharset = $charset;
         } else {
             $flag = false;
@@ -356,9 +351,13 @@ class I18N_Arabic
     {
         $flag = true;
         
-        $charset = strtolower($charset);
+        $charset  = strtolower($charset);
+        $charsets = array('utf-8', 'windows-1256', 'cp1256', 'iso-8859-6');
         
-        if (in_array($charset, array('utf-8', 'windows-1256', 'iso-8859-6'))) {
+        if (in_array($charset, $charsets)) {
+            if ($charset == 'windows-1256') {
+                $charset = 'cp1256';
+            }
             $this->_outputCharset = $charset;
         } else {
             $flag = false;
@@ -375,7 +374,13 @@ class I18N_Arabic
      */
     public function getInputCharset()
     {
-        return $this->_inputCharset;
+        if ($this->_inputCharset == 'cp1256') {
+            $charset = 'windows-1256';
+        } else {
+            $charset = $this->_inputCharset;
+        }
+        
+        return $charset;
     }
     
     /**
@@ -386,79 +391,13 @@ class I18N_Arabic
      */
     public function getOutputCharset()
     {
-        return $this->_outputCharset;
-    }
-    
-    /**
-     * Convert Arabic string from one charset to another
-     *          
-     * @param string $str           Original Arabic string that you would like
-     *                              to convert
-     * @param string $inputCharset  Input charset
-     * @param string $outputCharset Output charset
-     *      
-     * @return string Converted Arabic string in defined charset
-     * @author Khaled Al-Shamaa <khaled@ar-php.org>
-     */
-    public function coreConvert($str, $inputCharset, $outputCharset)
-    {
-        if ($inputCharset != $outputCharset) {
-            if ($inputCharset == 'windows-1256') {
-                $inputCharset = 'cp1256';
-            }
-            
-            if ($outputCharset == 'windows-1256') {
-                $outputCharset = 'cp1256';
-            }
-            
-            $convStr = iconv($inputCharset, "$outputCharset", $str);
-
-            if ($convStr == '' && $str != '') {
-                include self::getClassFile('CharsetC');
-
-                $c = I18N_Arabic_CharsetC::singleton();
-                
-                if ($inputCharset == 'cp1256') {
-                    $convStr = $c->win2utf($str);
-                } else {
-                    $convStr = $c->utf2win($str);
-                }
-            }
+        if ($this->_outputCharset == 'cp1256') {
+            $charset = 'windows-1256';
         } else {
-            $convStr = $str;
+            $charset = $this->_outputCharset;
         }
         
-        return $convStr;
-    }
-
-    /**
-     * Convert Arabic string from one format to another
-     *          
-     * @param string $str           Arabic string in the format set by setInput
-     *                              Charset
-     * @param string $inputCharset  (optional) Input charset 
-     *                              [utf-8|windows-1256|iso-8859-6]
-     *                              default value is NULL (use set input charset)
-     * @param string $outputCharset (optional) Output charset 
-     *                              [utf-8|windows-1256|iso-8859-6]
-     *                              default value is NULL (use set output charset)
-     *                                  
-     * @return string Arabic string in the format set by method setOutputCharset
-     * @author Khaled Al-Shamaa <khaled@ar-php.org>
-     */
-    public function convert($str, $inputCharset = null, $outputCharset = null)
-    {
-        if ($inputCharset == null) {
-            $inputCharset = $this->_inputCharset;
-        }
-        
-        if ($outputCharset == null) {
-            $outputCharset = $this->_outputCharset;
-        }
-        
-        $str = $this->coreConvert($str, $inputCharset, $outputCharset);
-
-        return $str;
+        return $charset;
     }
 
     /**
@@ -488,7 +427,7 @@ class I18N_Arabic
      *                text_email, and html_email)
      * @author Khaled Al-Shamaa <khaled@ar-php.org>
      */
-    public static function header($mode = 'http', $conn = null)
+    public function header($mode = 'http', $conn = null)
     {
         $mode = strtolower($mode);
         $head = '';
