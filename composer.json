@@ -1,28 +1,30 @@
 {
-    "name": "ar-php/ar-php",
-    "description": "helper library for dealing with arabic language",
-    "type": "library",
-    "license": "LGPL-3.0",
-    "homepage": "http://www.ar-php.org/",
-    "minimum-stability": "stable",
-    "authors": [
-        {
-		"email":"khaled@ar-php.org",
-		"name":"Khaled Al-Sham'aa",
-		"homepage":"http://www.ar-php.org/"
-	},
-	{
-            "name": "Tawfek Daghistani",
-            "email": "tawfekov@gmail.com"
-        }
-    ],
-    "require": {
-        "php": ">=5.3.0"
+  "name": "ar-php/ar-php",
+  "description": "helper library for dealing with arabic language",
+  "type": "library",
+  "license": "LGPL-3.0",
+  "homepage": "http://www.ar-php.org/",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "email": "khaled@ar-php.org",
+      "name": "Khaled Al-Sham'aa",
+      "homepage": "http://www.ar-php.org/"
     },
-    "autoload": {
-	"psr-0": {
-            "Arphp": "src/"
-        },
-	"classmap": ["autoload_classmap.php "]
+    {
+      "name": "Tawfek Daghistani",
+      "email": "tawfekov@gmail.com"
     }
+  ],
+  "require": {
+    "php": ">=5.3.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "Arphp": "src/"
+    },
+    "classmap": [
+      "autoload_classmap.php "
+    ]
+  }
 }
