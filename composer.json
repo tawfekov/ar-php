@@ -24,7 +24,7 @@
       "Arphp": "src/"
     },
     "classmap": [
-      "autoload_classmap.php "
+      "autoload_classmap.php"
     ]
   }
 }
