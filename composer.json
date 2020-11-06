@@ -1,18 +1,19 @@
 {
-  "name": "wboyz/ar-php",
-  "description": "helper library for dealing with arabic language | fork of the tawfekov/ar-php package",
+  "name": "ar-php/ar-php",
+  "description": "helper library for dealing with arabic language",
   "type": "library",
   "license": "LGPL-3.0",
   "homepage": "http://www.ar-php.org/",
   "minimum-stability": "stable",
   "authors": [
     {
-      "email": "bertalan.verebelyi@gmail.com",
-      "name": "Bertalan Verebelyi"
+      "email": "khaled@ar-php.org",
+      "name": "Khaled Al-Sham'aa",
+      "homepage": "http://www.ar-php.org/"
     },
     {
-      "name": "Csaba Verebelyi",
-      "email": "csaba.verebelyi@gmail.com"
+      "name": "Tawfek Daghistani",
+      "email": "tawfekov@gmail.com"
     }
   ],
   "require": {
