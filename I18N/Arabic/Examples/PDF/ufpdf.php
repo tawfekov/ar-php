@@ -284,7 +284,7 @@ function utf8_to_utf16be(&$txt, $bom = true) {
     $c = ord($txt{$i});
     // ASCII
     if ($c < 0x80) {
-      $out .= "\x00". $txt{$i};
+      $out .= "\x00". $txt[$i];
     }
     // Lost continuation byte
     else if ($c < 0xC0) {
