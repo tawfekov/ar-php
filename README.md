@@ -1,1 +1,1 @@
-Fork of the original repository: https://github.com/tawfekov/ar-php.
+# This package is abandoned and no longer maintained. The author suggests using the khaled.alshamaa/ar-php package instead.
